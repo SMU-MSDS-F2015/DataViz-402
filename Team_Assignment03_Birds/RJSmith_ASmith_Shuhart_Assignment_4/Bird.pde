@@ -11,7 +11,7 @@ class Bird {
   // Constructor. Randomly set up the bird properties.
   Bird() {
     xpos = random(100, width - 100);
-    ypos = random(50, height - 50);
+    ypos = random(50, height - 450);
 
     speedX = random(.5, 2.2);
     if (random(0, 1) < 0.5) {
@@ -101,15 +101,15 @@ void setSpecies() {
      // When hitting right wall, turn to face backwards
      faceForward = false;
     }
-  
+
     if (xpos < radius) {
       speedX = -speedX;
-
+    
       // When hitting left wall, turn to face forwards
       faceForward = true;
     }
   
-    if (ypos > height - radius) {
+    if (ypos > height - 450 - radius) {
       speedY = -speedY;
     }
   

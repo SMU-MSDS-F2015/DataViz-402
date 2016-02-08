@@ -31,15 +31,34 @@ String inputNumber = "";
 // Array to hold each of the birds
 Bird[] birds;
 
+String[] imgs = new String[]{"2016_election.jpg"};
+PImage[] images = new PImage[imgs.length];
+
+//PImage img01, img02, img03, img04;
 void setup(){
-  size(1000, 800);
-  createBirds();
+  size(1000,800);
+  
+  int idx = 0;
+  for(String filePath: imgs) {
+    images[idx] = loadImage(filePath);
+    images[idx].resize(1000, 450);
+    image(images[idx], 0, 0);
+    
+    idx++;
+  }
+  
+  createBirds(); 
 }
 
 void draw(){
   //Clear previous frame, adjust background to sky blue
-  background(100, 180, 255);
-
+  background(62, 109, 170);
+  
+  //image(img01,0,0);
+  for(PImage tmp_image: images) {
+    image(tmp_image, 0, height - 495);
+  }
+  
   // Draw each bird in turn
   for (int i = 0; i < birdCount; i += 1)  {
     birds[i].drawBird();
@@ -56,7 +75,7 @@ void keyPressed(){
   
   // On hitting enter/return, adjust the number of birds to the count
   if( key == ENTER || key == RETURN ){
-    if (birdCount > 0) {
+    if (birdCount >= 0) {
       birdCount = int(inputNumber);
       inputNumber = "";
       println("Changing the number of birds to " + birdCount);

@@ -48,6 +48,7 @@ void setup(){
   }
   
   createBirds(); 
+  iowa();
 }
 
 void draw(){

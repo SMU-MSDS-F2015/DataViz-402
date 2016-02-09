@@ -1,14 +1,6 @@
 class Delegate {
   final static float GRAVITY = 9.81 / 30.0; // scaled down because science
-  final static int MAX_VAL = 255;
-  final static int MIN_VAL = 240;
-  final static float MIN_SIZE= 5.0;
-  final static float MAX_SIZE= 10.0;
-  
-  final int r = floor(random(MIN_VAL, MAX_VAL));
-  final int g = floor(random(MIN_VAL, MAX_VAL));
-  final int b = floor(random(MIN_VAL, MAX_VAL));
-  final float size = random(MIN_SIZE, MAX_SIZE);
+  final float size = 15;
   
   String party;
   String candidate;
@@ -57,9 +49,13 @@ class Delegate {
     }
   }
   
-  // Set the bird color. Also, depending on the bird, set its size
+  // Set the color based on party of the delegate
   void colorExcretion() {
-    fill(r,g,b);
+    if (party.toUpperCase().startsWith("R")) {
+      fill(0, 0, 150);
+    } else {
+      fill(200, 0, 0);
+    }
   }
   
   float gravity(int secs) {

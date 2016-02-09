@@ -1,6 +1,6 @@
 // SMU Data Science Program
 // MSDS 6390-402 Visualization of Information
-// Assignment #3: Dynamic Composition 1
+// Assignment #4: Dynamic Composition II
 // Ryan Shuhart
 // Adrienne Smith
 // RJ Smith
@@ -36,14 +36,14 @@ PImage[] images = new PImage[imgs.length];
 
 //PImage img01, img02, img03, img04;
 void setup(){
-  size(1000,800);
+  size(1000,600);
   
   int idx = 0;
   for(String filePath: imgs) {
     images[idx] = loadImage(filePath);
-    images[idx].resize(1000, 450);
+    images[idx].resize(1000, 600);
     image(images[idx], 0, 0);
-    
+
     idx++;
   }
   
@@ -52,12 +52,10 @@ void setup(){
 }
 
 void draw(){
-  //Clear previous frame, adjust background to sky blue
-  background(62, 109, 170);
-  
+
   //image(img01,0,0);
   for(PImage tmp_image: images) {
-    image(tmp_image, 0, height - 495);
+    image(tmp_image, 0, 0);
   }
   
   // Draw each bird in turn

@@ -25,42 +25,33 @@
 // Initially, set number of birds to 20
 int birdCount = 20;
 
+// The image file to display on background
+final String imageFileName = "2016_election.jpg";
+PImage backgroundImage;
+
 // Track the inputNumber for allowing changing number of birds on the fly
 String inputNumber = "";
 
 // Array to hold each of the birds
-Bird[] birds;
+Flock birds;
 
-String[] imgs = new String[]{"2016_election.jpg"};
-PImage[] images = new PImage[imgs.length];
-
-//PImage img01, img02, img03, img04;
 void setup(){
-  size(1850,1000);
+  size(1000,600);
   
-  int idx = 0;
-  for(String filePath: imgs) {
-    images[idx] = loadImage(filePath);
-    images[idx].resize(width, height);
-    image(images[idx], 0, 0);
+  backgroundImage = loadImage(imageFileName);
+  backgroundImage.resize(width, height);
 
-    idx++;
-  }
-  
   createBirds(); 
-  iowa();
 }
 
 void draw(){
 
-  //image(img01,0,0);
-  for(PImage tmp_image: images) {
-    image(tmp_image, 0, 0);
-  }
+  image(backgroundImage, 0, 0);
   
   // Draw each bird in turn
   for (int i = 0; i < birdCount; i += 1)  {
-    birds[i].drawBird();
+    // The bomber will internally handle poop governance
+    birds.get(i).drawBird();
   }
 }
 
@@ -85,10 +76,5 @@ void keyPressed(){
 
 // Create the birds, based on the birdCount
 void createBirds() {
-  birds = new Bird[birdCount];
-  // Create all but one of the birds, then create the Bomber
-  for ( int i = 0; i < birdCount - 1; i++)  {
-    birds[i] = new Bird();    
-  }
-  birds[birdCount - 1] = new BomberBird();
+  birds = new Flock(birdCount);
 }

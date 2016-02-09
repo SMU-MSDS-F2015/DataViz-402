@@ -10,8 +10,8 @@ class Bird {
 
   // Constructor. Randomly set up the bird properties.
   Bird() {
-    xpos = random(100, width - 100);
-    ypos = random(50, height - 450);
+    xpos = random(100, width * 0.8);
+    ypos = random(50, height * 0.35);
 
     speedX = random(.5, 2.2);
     if (random(0, 1) < 0.5) {
@@ -22,7 +22,7 @@ class Bird {
     if(random(0, 1) < 0.5) {
       speedY = -speedY;
     }
-    
+    println(speedY);
     // choose from 4 species
     speciesNumber = floor(random(1, 5));
 
@@ -94,7 +94,7 @@ void setSpecies() {
   // Check if bird hits wall, and reflect the speed accordingly.
   // If hitting left/right wall, change bird's direction
   void checkCollisions(){
-   float radius = 30 * size;
+   float radius = 20 * size;
    if (xpos > width - radius) {
      speedX = -speedX;
 
@@ -109,7 +109,7 @@ void setSpecies() {
       faceForward = true;
     }
   
-    if (ypos > height - 450 - radius) {
+    if (ypos > height * 0.35 - radius) {
       speedY = -speedY;
     }
   

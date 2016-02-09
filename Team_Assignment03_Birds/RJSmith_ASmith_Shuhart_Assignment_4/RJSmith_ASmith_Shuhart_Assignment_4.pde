@@ -36,12 +36,12 @@ PImage[] images = new PImage[imgs.length];
 
 //PImage img01, img02, img03, img04;
 void setup(){
-  size(1000,600);
+  size(1850,1000);
   
   int idx = 0;
   for(String filePath: imgs) {
     images[idx] = loadImage(filePath);
-    images[idx].resize(1000, 600);
+    images[idx].resize(width, height);
     image(images[idx], 0, 0);
 
     idx++;
@@ -86,7 +86,9 @@ void keyPressed(){
 // Create the birds, based on the birdCount
 void createBirds() {
   birds = new Bird[birdCount];
-  for ( int i = 0; i < birdCount; i++)  {
+  // Create all but one of the birds, then create the Bomber
+  for ( int i = 0; i < birdCount - 1; i++)  {
     birds[i] = new Bird();    
   }
+  birds[birdCount - 1] = new BomberBird();
 }

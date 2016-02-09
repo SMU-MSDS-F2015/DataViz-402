@@ -36,7 +36,7 @@ String inputNumber = "";
 Flock birds;
 
 void setup(){
-  size(1000,600);
+  size(1000, 600);
   
   backgroundImage = loadImage(imageFileName);
   backgroundImage.resize(width, height);

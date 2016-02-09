@@ -6,7 +6,7 @@ public enum Species implements DrawableSpecies {
     @Override public int getR() { return 150; }
     @Override public int getG() { return 0; }
     @Override public int getB() { return 0; }
-    @Override public float getSize() { return 1.3; }
+    @Override public float getSize() { return 1.2; }
   },
   
   CANARY {
@@ -27,13 +27,13 @@ public enum Species implements DrawableSpecies {
     @Override public int getR() { return 0; }
     @Override public int getG() { return 0; }
     @Override public int getB() { return 0; }
-    @Override public float getSize() { return 1.6; }
+    @Override public float getSize() { return 1.4; }
   },
   
   BOMBER {
     @Override public int getR() { return 200; }
     @Override public int getG() { return 4; }
     @Override public int getB() { return 201; }
-    @Override public float getSize() { return 2.2; }
+    @Override public float getSize() { return 1.4; }
   }
 }

@@ -17,8 +17,8 @@ class Bird {
 
   // Constructor can build bomber bird
   Bird(final boolean isBomber) {
-    xpos = random(100, width - 100);
-    ypos = random(50, height - 450);
+    xpos = random(100, width * 0.8);
+    ypos = random(50, height * 0.3);
 
     speedX = random(.5, 2.2);
     if (random(0, 1) < 0.5) {
@@ -118,7 +118,7 @@ class Bird {
       faceForward = true;
     }
   
-    if (ypos > height - 450 - radius) {
+    if (ypos > height * 0.4 - radius) {
       speedY = -speedY;
     }
   

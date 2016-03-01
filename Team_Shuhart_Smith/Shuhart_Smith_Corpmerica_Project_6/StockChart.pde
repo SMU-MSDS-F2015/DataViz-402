@@ -11,10 +11,13 @@ class StockChart {
   float minPrice, maxPrice;
   boolean loaded = false;
 
+  // Constructor will take the stock symbol and company name as params
   StockChart(String symbol, String companyName) {
     title = "(" + symbol + ") " + companyName;
   }
   
+  // This method will load the closing price data for the given company,
+  // and also compute min/max to scale the y-axis
   void loadData(float[] price) {
     this.price = price;
     minPrice = min(price);
@@ -22,18 +25,30 @@ class StockChart {
     loaded = true;
   }
   
+  // Draw the chard, and call the helper functions to draw the char parts
   void draw(int x, int y) {
+    // Set the member variables used in helper functions
     X1 = 50;
     Y1 = 50;
     X2 = 500;
     Y2 = 200;
+
+    
+    // Move the chart down below the map
     translate(x, y);
+
+    // Call the helpers to draw the parts
     drawBorder();
     drawTitle();
-    drawGraph(price, minPrice, maxPrice);
-    movingAverage(price, minPrice, maxPrice, 25);
     drawXLabels();
     drawYLabels();
+
+    // Call helper function to draw the moving averages
+    movingAverage(price, minPrice, maxPrice, 25);
+
+    // Draw the line graph of the closing prices
+    drawGraph(price, minPrice, maxPrice);
+
 } // draw()
 
   void drawBorder() {
@@ -104,6 +119,8 @@ class StockChart {
     textSize(10);
     textAlign(CENTER);
   
+  // TODO: Right now, months on x-axis are hard-code. Need to tie into the dates
+  // once StockQuote class is hooked up and can return the 
   int year = 15;
   for(int i = 1; i < 14; i++) {
     int n = i + 1;

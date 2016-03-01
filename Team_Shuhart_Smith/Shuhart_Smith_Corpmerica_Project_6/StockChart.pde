@@ -32,7 +32,6 @@ class StockChart {
     Y1 = 50;
     X2 = 500;
     Y2 = 200;
-
     
     // Move the chart down below the map
     translate(x, y);
@@ -48,20 +47,17 @@ class StockChart {
 
     // Draw the line graph of the closing prices
     drawGraph(price, minPrice, maxPrice);
-
-} // draw()
+}
 
   void drawBorder() {
     rectMode(CORNERS);
-    noStroke();
-    fill(0);
-    rect(X1 - 50, Y1 - 50, X2 + 50, Y2 + 50);
+    stroke(0);
     fill(255);
     rect(X1, Y1, X2, Y2);
   }
 
   void drawTitle() {
-    fill(255);
+    fill(0);
     textSize(18);
     textAlign(LEFT);
     text(title, X1, Y1 - 10);
@@ -77,7 +73,7 @@ class StockChart {
       vertex(x, y);
     }
     endShape();
-  } // drawGraph()
+  }
   
   void movingAverage(float[] data, float yMin, float yMax, int MAP) {
     noFill();
@@ -96,13 +92,13 @@ class StockChart {
       vertex(x, y);
     }
     endShape();
-  } //movingAverage()
+  }
   
   void drawYLabels () {
-    fill(255);
+    fill(0);
     textSize(10);
     textAlign(RIGHT);
-    stroke(255);
+    stroke(0);
     for (float i=minPrice; i <= maxPrice; i += 10) {
       float y = map(i, minPrice, maxPrice, Y2, Y1);
       text(floor(i), X1-10, y);
@@ -110,17 +106,17 @@ class StockChart {
     }
     textSize(18);
     text("$", X1 - 35, (Y1 + Y2) / 2);
-  } // drawYLabels()
-  
+  }
   
   void drawXLabels() {
-    fill(255);
     stroke(0);
     textSize(10);
     textAlign(CENTER);
   
   // TODO: Right now, months on x-axis are hard-code. Need to tie into the dates
-  // once StockQuote class is hooked up and can return the 
+  // once StockQuote class is hooked up and can return the array of date for which
+  // prices are returned
+  
   int year = 15;
   for(int i = 1; i < 14; i++) {
     int n = i + 1;
@@ -139,6 +135,6 @@ class StockChart {
   
     textSize(18);
     textAlign(CENTER, TOP);
-    text("Month", (X1 + X2) / 2, Y2 + 10);
-  } // drawXLabels()
+    text("Month", (X1 + X2) / 2, Y2 + 15);
+  }
 }

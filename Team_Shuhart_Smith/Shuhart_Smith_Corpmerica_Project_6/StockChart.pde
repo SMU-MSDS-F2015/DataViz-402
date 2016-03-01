@@ -97,14 +97,31 @@ class StockChart {
     text("$", X1 - 35, (Y1 + Y2) / 2);
   } // drawYLabels()
   
+  
   void drawXLabels() {
     fill(255);
     stroke(0);
     textSize(10);
     textAlign(CENTER);
   
+  int year = 15;
+  for(int i = 1; i < 14; i++) {
+    int n = i + 1;
+    if (n > 12) {
+      n = n - 12;
+      year = 16;
+    }
+    
+    String d = str(n) + "/" + str(year);
+    
+    float x = map(i, 0, 14, X1, X2);
+    text(d, x, Y2+10);
+    strokeWeight(0.3);
+    line(x, Y2, x, Y1);
+  }
+  
     textSize(18);
     textAlign(CENTER, TOP);
-    text("Date (last year)", (X1 + X2) / 2, Y2 + 10);
+    text("Month", (X1 + X2) / 2, Y2 + 10);
   } // drawXLabels()
 }

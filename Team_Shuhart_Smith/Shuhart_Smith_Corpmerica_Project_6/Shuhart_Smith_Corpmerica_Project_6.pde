@@ -28,7 +28,7 @@ void draw(){
   
 void mousePressed(){
   // Get the company/stock symbol for the given state
-  if (map.currentState != "none") {
+  if (map.currentState != "none" && stateSymbol.hasKey(map.currentState)) {
     String symbol = stateSymbol.get(map.currentState);
     String company = stateCompany.get(map.currentState);
   

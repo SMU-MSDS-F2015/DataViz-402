@@ -27,6 +27,7 @@ class USMap {
     map.draw();
 
     // Check to see if mouse is hovered over the state, and highlight accordingly
+    currentState = "none";
     RPoint mousePosition = new RPoint(mouseX, mouseY);
     for(RGeomElem state : map.children) {
       if(state.contains(mousePosition)){

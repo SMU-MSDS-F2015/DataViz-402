@@ -28,13 +28,15 @@ void draw(){
   
 void mousePressed(){
   // Get the company/stock symbol for the given state
-  String symbol = stateSymbol.get(map.currentState);
-  String company = stateCompany.get(map.currentState);
-
-  // Get the closing prices for the given stock
-  float[] prices = yahoo.closingPrices(symbol);
-
-  // Draw the stock chart for the given symbol/prices
-  chart = new StockChart(symbol, company);
-  chart.loadData(prices);
+  if (map.currentState != "none") {
+    String symbol = stateSymbol.get(map.currentState);
+    String company = stateCompany.get(map.currentState);
+  
+    // Get the closing prices for the given stock
+    float[] prices = yahoo.closingPrices(symbol);
+  
+    // Draw the stock chart for the given symbol/prices
+    chart = new StockChart(symbol, company);
+    chart.loadData(prices);
+  }
 }

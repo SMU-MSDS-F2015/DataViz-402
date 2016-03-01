@@ -34,45 +34,5 @@ void setupData() {
     coSymList = append(coSymList, coSym);
     coNameList = append(coNameList, coName);
     coStateList = append(coStateList, coSym);
-
-    //println(coSym + "\t\t" + coName + "\t\t" + state);
   }
-}
-
-float[] getPrices(String sym) {
-
-  int i = 0;
-  //sym = coSymList[i];  
-
-  // Load data from Yahoo finance via HTML location.
-  // HTML location is a string with the symbol variable 
-  // concantenated in to the address.
-  String priceData = "http://real-chart.finance.yahoo.com/table.csv?s=" +
-    sym + "&d=2&e=28&f=2016&g=d&a=1&b=28&c=2015&ignore=.csv";
-  
-  // Load date of symbol from Yahoo Finance
-  priceTable = loadTable(priceData, "header");
-  println(priceData);
-
-  // More for visual confirmation data is working
-  // Print Company name column names with two tabs in the middle 
-  //println(coNameList[i]);
-  println("Date"+"\t\t"+"Close Price");
-
-  // Iterates through and prints each row of Date and Close 
-  // separeated by two tabs
-  float[] prices = new float[priceTable.getRowCount()];
-  i = 0;
-  for (TableRow row : priceTable.rows()) {
-   int t = priceTable.getRowCount() - 1 - i;
-   prices[t] = row.getFloat("Close");  
-   println(row.getString("Date")+ "\t\t" + row.getFloat("Close"));
-   i++;
-  }
-  //for (int n = 0; n < priceTable.rows().length; n++) {
-  //  prices[i] = row.getFloat("Close");
-  //  println(row.getString("Date")+ "\t\t" + row.getFloat("Close"));
-  //  i++;
-  //}  
-  return prices;
 }

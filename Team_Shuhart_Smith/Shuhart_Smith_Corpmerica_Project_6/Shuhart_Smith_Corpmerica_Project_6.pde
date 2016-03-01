@@ -1,5 +1,6 @@
 USMap map;
 StockChart chart;
+DataYahoo yahoo = new DataYahoo();
 
 void setup(){
   size(600, 800);
@@ -31,7 +32,7 @@ void mousePressed(){
   String company = stateCompany.get(map.currentState);
 
   // Get the closing prices for the given stock
-  float[] prices = getPrices(symbol);
+  float[] prices = yahoo.closingPrices(symbol);
 
   // Draw the stock chart for the given symbol/prices
   chart = new StockChart(symbol, company);

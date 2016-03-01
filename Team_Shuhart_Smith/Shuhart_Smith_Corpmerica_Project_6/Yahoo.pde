@@ -3,8 +3,9 @@ class DataYahoo {
   //Properties, Attributes, Fields
   //Table priceTable;
   String symbol;
-  float[] closingPrices = {};
   
+  StringDict stateSymbol = new StringDict();
+  StringDict stateCompany = new StringDict();
 
   //Constructors 
   DataYahoo() {
@@ -14,26 +15,31 @@ class DataYahoo {
     this.symbol = symbol;
   }
 
-
   //Methods and Functions
   float[] closingPrices(String symbol) {
+    
     // Load data from Yahoo finance via HTML location.
     // HTML location is a string with the symbol variable 
     // concantenated in to the address.
-    String startYr = "2015";
-    String priceData = "http://real-chart.finance.yahoo.com/table.csv?s=" +
-      symbol + "&d=2&e=1&f=2016&g=d&a=11&b=1&c=" +
-      startYr + "&ignore=.csv";
+
+    String priceData = "http://real-chart.finance.yahoo.com/table.csv?s=" + symbol
+      + "&d=2&e=1&f=2016&g=d&a=11&b=1&c=2014&ignore=.csv";
 
     // Load date of symbol from Yahoo Finance
-    Table priceTable;
+    processing.data.Table priceTable;
     priceTable = loadTable(priceData, "header");
+
+    // Add the closing prices in reverse order
+    float[] closingPrices = new float[priceTable.getRowCount()];
+    int i = 0;
 
     // Iterates through 
     for (TableRow row : priceTable.rows()) {
-      float price = row.getFloat("Close");
-      closingPrices = append(closingPrices, price);
+      int t = priceTable.getRowCount() - 1 - i;
+      closingPrices[t] = row.getFloat("Close"); 
+      i++;
     }
+    
     return closingPrices;
   }
 }

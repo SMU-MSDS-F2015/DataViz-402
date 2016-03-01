@@ -10,6 +10,8 @@ String[] coSymList = {};
 String[] coNameList = {};  
 String[] coStateList = {};
 
+StringDict stateSymbol = new StringDict();
+StringDict stateCompany = new StringDict();
 
 void setupData() {  
   // Data of Stock Symbols, Names, and HQ States
@@ -20,8 +22,15 @@ void setupData() {
   for (TableRow row : symTable.rows()) {    
     String state = row.getString("state");
     String coSym = row.getString("coSymbol");
+    if(!stateSymbol.hasKey(state)) {
+      stateSymbol.set(state, coSym);
+    }
+      
     String coName = row.getString("coName");
-
+    if(!stateCompany.hasKey(state)) {
+      stateCompany.set(state, coName);
+    }
+    
     coSymList = append(coSymList, coSym);
     coNameList = append(coNameList, coName);
     coStateList = append(coStateList, coSym);
@@ -39,7 +48,7 @@ float[] getPrices(String sym) {
   // HTML location is a string with the symbol variable 
   // concantenated in to the address.
   String priceData = "http://real-chart.finance.yahoo.com/table.csv?s=" +
-    sym + "&d=2&e=28&f=2016&g=d&a=5&b=25&c=2015&ignore=.csv";
+    sym + "&d=2&e=28&f=2016&g=d&a=1&b=28&c=2015&ignore=.csv";
   
   // Load date of symbol from Yahoo Finance
   priceTable = loadTable(priceData, "header");
@@ -52,12 +61,18 @@ float[] getPrices(String sym) {
 
   // Iterates through and prints each row of Date and Close 
   // separeated by two tabs
-  float[] prices = new float[250];
-  i  = 0;
-  for (TableRow row : priceTable.rows()) {    
-    prices[i] = row.getFloat("Close");
-    println(row.getString("Date")+ "\t\t" + row.getFloat("Close"));
-    i++;
+  float[] prices = new float[priceTable.getRowCount()];
+  i = 0;
+  for (TableRow row : priceTable.rows()) {
+   int t = priceTable.getRowCount() - 1 - i;
+   prices[t] = row.getFloat("Close");  
+   println(row.getString("Date")+ "\t\t" + row.getFloat("Close"));
+   i++;
   }
+  //for (int n = 0; n < priceTable.rows().length; n++) {
+  //  prices[i] = row.getFloat("Close");
+  //  println(row.getString("Date")+ "\t\t" + row.getFloat("Close"));
+  //  i++;
+  //}  
   return prices;
 }

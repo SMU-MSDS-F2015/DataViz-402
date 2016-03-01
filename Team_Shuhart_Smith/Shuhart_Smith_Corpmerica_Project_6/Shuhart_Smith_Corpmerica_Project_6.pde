@@ -2,7 +2,7 @@ USMap map;
 StockChart chart;
 
 void setup(){
-  size(600, 1000);
+  size(600, 800);
   map = new USMap(this);
   setupData();
   chart = new StockChart("MSFT", "Microsoft, Corp.");

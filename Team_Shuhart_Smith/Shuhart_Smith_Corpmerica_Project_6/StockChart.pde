@@ -1,3 +1,9 @@
+/*------------------------------------------------------------
+ Code adopted from Sketch 5-5e: Visualizing Time Series (AAPL Stock prices)
+ Processing: Creative Coding and Generative Art in Processing 2
+ By Ira Greenberg, Dianna Xu, and Deepak Kumar
+ ------------------------------------------------------------*/
+
 class StockChart {
   String title;
   int X1, Y1, X2, Y2;

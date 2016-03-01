@@ -1,3 +1,4 @@
+// Use geomerative library for working with SVG map and states
 import geomerative.*;
 
 class USMap {

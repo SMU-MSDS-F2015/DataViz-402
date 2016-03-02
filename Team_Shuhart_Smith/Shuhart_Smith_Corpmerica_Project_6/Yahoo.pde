@@ -1,3 +1,6 @@
+import java.util.*;
+import java.text.*;
+
 class DataYahoo {
 
   //Properties, Attributes, Fields
@@ -22,12 +25,21 @@ class DataYahoo {
     // HTML location is a string with the symbol variable 
     // concantenated in to the address.
 
-    String priceData = "http://real-chart.finance.yahoo.com/table.csv?s=" + symbol
-      + "&d=2&e=1&f=2016&g=d&a=11&b=1&c=2014&ignore=.csv";
+    Date endDate = new Date();
+    Calendar calendar = new GregorianCalendar();
+    calendar.setTime(endDate);
+    calendar.add(Calendar.MONTH, -14);
+    Date startDate = calendar.getTime();
+    
+    SimpleDateFormat startFormat = new SimpleDateFormat ("'&g=d&a='M'&b='d'&c='y'&ignore=.csv'");
+    SimpleDateFormat endFormat = new SimpleDateFormat ("'&d='M'&e='d'&f='y");
+    String queryString = "http://real-chart.finance.yahoo.com/table.csv?s=" + symbol
+        + endFormat.format(endDate) + startFormat.format(startDate);
+        
 
     // Load date of symbol from Yahoo Finance
     processing.data.Table priceTable;
-    priceTable = loadTable(priceData, "header");
+    priceTable = loadTable(queryString, "header");
 
     // Add the closing prices in reverse order
     float[] closingPrices = new float[priceTable.getRowCount()];

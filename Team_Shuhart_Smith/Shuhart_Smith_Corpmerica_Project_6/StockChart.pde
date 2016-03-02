@@ -25,7 +25,7 @@ class StockChart {
     loaded = true;
   }
   
-  // Draw the chard, and call the helper functions to draw the char parts
+  // Draw the chart, and call the helper functions to draw the chart parts
   void draw(int x, int y) {
     // Set the member variables used in helper functions
     X1 = 50;

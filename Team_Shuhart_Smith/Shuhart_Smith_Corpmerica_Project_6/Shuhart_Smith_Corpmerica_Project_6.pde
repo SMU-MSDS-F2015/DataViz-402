@@ -5,7 +5,6 @@ DataYahoo yahoo = new DataYahoo();
 
 void setup(){
   size(600, 800);
-
   // Create the US map and load from SVG
   map = new USMap(this);
 

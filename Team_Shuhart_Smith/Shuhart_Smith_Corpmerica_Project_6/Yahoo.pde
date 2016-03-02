@@ -36,8 +36,7 @@ class DataYahoo {
     String queryString = "http://real-chart.finance.yahoo.com/table.csv?s=" + symbol
         + endFormat.format(endDate) + startFormat.format(startDate);
         
-
-    // Load date of symbol from Yahoo Finance
+    // Load data of symbol from Yahoo Finance
     processing.data.Table priceTable;
     priceTable = loadTable(queryString, "header");
 
@@ -45,7 +44,7 @@ class DataYahoo {
     float[] closingPrices = new float[priceTable.getRowCount()];
     int i = 0;
 
-    // Iterates through 
+    // Iterates through dates, and pull the price into the array to return
     for (TableRow row : priceTable.rows()) {
       int t = priceTable.getRowCount() - 1 - i;
       closingPrices[t] = row.getFloat("Close"); 

@@ -1,0 +1,5 @@
+data_source,api_site,measure,component1,componet2
+BLS,http://api.bls.gov/publicAPI/v1/timeseries/data/,Total Nonfarm Jobs,SMS,1
+BLS,http://api.bls.gov/publicAPI/v1/timeseries/data/,Mining and Logging Jobs,SMS,1000000001
+EIA,http://api.eia.gov/series/?api_key=33FB28DDDBBB06998F17DB4EF32A46DB&series_id=,"State Field Production of Crude Oil, Monthly",PET.MCRFP,1.M
+YahooFinance,http://real-chart.finance.yahoo.com/table.csv?s=,DataYahoo,,

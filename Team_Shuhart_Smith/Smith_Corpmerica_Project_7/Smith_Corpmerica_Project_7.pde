@@ -1,6 +1,10 @@
 Corpmerica myApp;
+processing.data.Table stateOil;
 
 void setup(){
+
+  stateOil =  loadTable("state_oil_production.csv", "header");
+  
   size(1000,1000);
   myApp = new Corpmerica(this);
 }

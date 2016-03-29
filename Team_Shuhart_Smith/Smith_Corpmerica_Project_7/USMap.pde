@@ -36,11 +36,23 @@ class USMap {
     // Check to see if mouse is hovered over the state, and highlight accordingly
     currentState = null;
     RPoint mousePosition = new RPoint(mouseX, mouseY);
+    
     for(RGeomElem state : map.children) {
+      String stateCode = state.name.toUpperCase();
+      // Now, color oil production
+      if (stateOil.findRow(stateCode, 0) != null) {
+        int production = stateOil.findRow(stateCode, 0).getInt(1);
+        int colorDepth = 255 - floor((log(production) * 10));
+        fill(colorDepth, colorDepth - 100, colorDepth - 100);
+        noStroke();
+        state.draw();
+      }
+
       if(state.contains(mousePosition)){
 
         // Keep track of the current state highlighted in case of mouse click
-        currentState = state.name.toUpperCase();
+        currentState = stateCode;
+        println(currentState);
         
         // Change current state to blue for hover-over highlighting
         fill(0,100,255,250);

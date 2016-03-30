@@ -31,6 +31,7 @@ class Corpmerica {
  
     // Get the company/stock chart for the given state
     if (map.isStateSelected()) {
+      println("debug here");
       chart = new StockChart(sketchWindow, map.getSymbol(), map.getCompany());
     }
   }

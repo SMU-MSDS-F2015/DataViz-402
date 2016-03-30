@@ -1,32 +1,7 @@
-class StockQuote {
-  int closingDateId;
-  float closingPrice;
+class StockQuote extends DateDataPoint {
 
   // Constructor that pulls out the date into days previous and stores in public field
-  StockQuote(String closingDate, float closingPrice) {
-    String[] dateParts = closingDate.split("-");
-    String dateIdString = dateParts[0] + dateParts[1] + dateParts[2];
-    this.closingDateId = parseInt(dateIdString);
-    this.closingPrice = closingPrice;
+  StockQuote(String date, float value) {
+    super(date, value);
   }
 }
-
-    // TODO: Modify the linecharting giStat code to allow Date for y-axis pairs on XYChart
-
-//import java.util.Date;
-//import java.text.ParseException;
-//import java.text.SimpleDateFormat;
-
-  //Date closingDate;
-
-    //SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-    //Date date = null;
-    //try 
-    //{
-    //  date = formatter.parse(closingDate);
-    //}
-    //catch (ParseException e) {
-    //  e.printStackTrace();
-    //}
-    
-    //this.closingDate = date;

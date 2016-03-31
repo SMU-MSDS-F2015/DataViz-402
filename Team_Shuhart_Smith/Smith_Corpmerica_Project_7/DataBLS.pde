@@ -5,7 +5,6 @@ void bls_stuff() {
   int i=0;
   println("state_name\tstate_abbv\tDate\t\tValue");
   for (TableRow row : blsData.rows()) {
-    int t = blsData.getRowCount() - 1 - i;
     println(row.getString("state_name") + "\t" + row.getString("state_abbv") + "\t" + row.getString("Date") + "\t\t" + row.getString("Value") );
     i++;
   }

@@ -3,7 +3,7 @@ class Corpmerica {
 
   StateData states;     // Keep track of the state data and companies
   USMap map;            // 
-  StockChart chart;
+  JobsChart jobsChart;
 
   Corpmerica(PApplet sketchWindow) {
     
@@ -15,7 +15,7 @@ class Corpmerica {
     surface.setResizable(true);
     
     // Create the ticker to track/graph the stock for a given state
-    chart = new StockChart();
+    jobsChart = new JobsChart();
     
     // Create the US map and load from SVG
     map = new USMap(sketchWindow);
@@ -24,15 +24,14 @@ class Corpmerica {
   void draw() {
     // Draw the map, then ticker
     map.draw();
-    chart.draw();
+    jobsChart.draw();
   }
   
   void handleMousePress() {
  
     // Get the company/stock chart for the given state
     if (map.isStateSelected()) {
-      println("debug here");
-      chart = new StockChart(sketchWindow, map.getSymbol(), map.getCompany());
+      jobsChart = new JobsChart(sketchWindow, map.currentState);
     }
   }
 }

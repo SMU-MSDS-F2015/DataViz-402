@@ -1,5 +1,5 @@
 //West Texas Crude Continuous Contract Daily Price
-processing.data.Table oilDaily
+processing.data.Table oilDaily;
 processing.data.Table oilMonthly;
 
 void oilDaily() {

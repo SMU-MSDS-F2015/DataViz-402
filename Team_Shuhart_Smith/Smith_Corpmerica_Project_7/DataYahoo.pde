@@ -8,7 +8,7 @@ class DataYahoo {
   }
 
   // Return the quotes at close for the give stock by calling into Yahoo API
-  StockQuote[] closingQuotes(String symbol) {
+  DateDataPoint[] closingQuotes(String symbol) {
     
     // Load data from Yahoo finance via HTML location.
     // HTML location is a string with the symbol variable 
@@ -19,13 +19,13 @@ class DataYahoo {
     priceTable = loadTable(buildQueryString(symbol), "header");
 
     // Add the closing prices in reverse order
-    StockQuote[] closingQuotes = new StockQuote[priceTable.getRowCount()];
+    DateDataPoint[] closingQuotes = new DateDataPoint[priceTable.getRowCount()];
     int i = 0;
 
     // Iterates through dates, and pull the price into the array to return
     for (TableRow row : priceTable.rows()) {
-      int t = priceTable.getRowCount() - 1 - i;
-      closingQuotes[t] = new StockQuote(row.getString("Date"), row.getFloat("Close")); 
+      int t = priceTable.getRowCount() - 1 - i; //fill backwards
+      closingQuotes[t] = new DateDataPoint(row.getString("Date"), row.getFloat("Close")); 
       i++;
     }
     

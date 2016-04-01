@@ -10,19 +10,20 @@ abstract class Chart {
   Chart() {
   }
  
-  Chart(PApplet sketchWindow, String title) {
-    this.title = title;
+  Chart(PApplet sketchWindow, String stateCode) {
     lineChart = new XYChart(sketchWindow);
   }
 
   void setData() {
     lineChart.setData(this.getDateIds(), this.getDailyValues());
   }
-  
+
   float[] getDailyValues() {
-    println(dataPoints);
+    println(dataPoints.length);
     float[] values = new float[dataPoints.length];
     for(int i = 0; i < dataPoints.length; i++) {
+      println(i);
+      println(dataPoints[i]);
       values[i] = dataPoints[i].dailyValue;
     }
     
@@ -30,7 +31,6 @@ abstract class Chart {
   }
 
   float[] getDateIds() {
-    println(dataPoints);
     float[] dates = new float[dataPoints.length];
     for(int i = 0; i < dataPoints.length; i++) {
       //dates[i] = quotes[i].closingDateId;

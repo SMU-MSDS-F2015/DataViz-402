@@ -2,7 +2,6 @@ Corpmerica myApp;
 processing.data.Table stateOil;
 
 void setup(){
-bls_stuff();
 
   stateOil =  loadTable("state_oil_production.csv", "header");
   

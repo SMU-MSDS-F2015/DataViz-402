@@ -1,4 +1,4 @@
-abstract class DateDataPoint {
+public class DateDataPoint {
   int dateId;
   float dailyValue;
 

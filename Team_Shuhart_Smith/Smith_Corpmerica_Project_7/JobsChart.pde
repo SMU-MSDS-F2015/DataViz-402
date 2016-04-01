@@ -13,7 +13,7 @@ class JobsChart extends Chart {
     println("in JobChart");
     println(dataPoints.length);
     this.hasData = true;
-    this.title = "Jobs Count for " + stateCode;
+    this.title = "2015 Oil Industry Jobs Count for " + stateCode;
     super.title = title;
     super.setData();
   }

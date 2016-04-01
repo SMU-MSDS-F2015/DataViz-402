@@ -24,7 +24,7 @@ abstract class Chart {
     for(int i = 0; i < dataPoints.length; i++) {
       println(i);
       println(dataPoints[i]);
-      values[i] = dataPoints[i].dailyValue;
+      values[i] = dataPoints[i].dailyValue; //Error here when clicking on state with no data
     }
     
     return values;
@@ -55,8 +55,8 @@ abstract class Chart {
     lineChart.setLineWidth(2);
 
     // Set the Axes labels
-    lineChart.setXAxisLabel("Business Days Ago");
-    lineChart.setYAxisLabel("Closing Price");
+    lineChart.setXAxisLabel("Months Ago"); //"Months" or "Months Ago"
+    lineChart.setYAxisLabel("All Employees, In Thousands"); // "All Employees, In Thousands" - That is how BLS lables it
 
     // Draw the chart, based on size of the window.
     lineChart.draw(30, height / 2 + 30,width - 60, height / 2 - 60); 

@@ -15,11 +15,12 @@ class JobsChart extends Chart {
     if (dataPoints[0] != null) {
       this.hasData = true;
     }
-    this.title = "Jobs Count for " + stateCode;
+    
+    this.title = "2015 Oil Industry Jobs Count for " + stateCode;
     super.title = title;
-    super.source = "Bureau of Labor & Statistics";
-    super.yUnits = "Thousands of Jobs";
     super.xUnits = "Months";
+    super.yUnits = "Jobs (Thousands)";
+    this.source = "Bureau of Labor & Statistics";
     super.setData();
   }
   

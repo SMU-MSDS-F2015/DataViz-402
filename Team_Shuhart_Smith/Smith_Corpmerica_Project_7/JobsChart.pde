@@ -18,7 +18,7 @@ class JobsChart extends Chart {
     
     this.title = "2015 Oil Industry Jobs Count for " + stateCode;
     super.title = title;
-    super.xUnits = "Months";
+    super.xUnits = "Month in 2015";
     super.yUnits = "Jobs (Thousands)";
     this.source = "Bureau of Labor & Statistics";
     super.setData();

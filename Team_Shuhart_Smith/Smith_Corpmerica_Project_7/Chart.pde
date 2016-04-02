@@ -39,7 +39,7 @@ abstract class Chart {
     float[] dates = new float[dataPoints.length];
     for(int i = 0; i < dataPoints.length; i++) {
       //dates[i] = quotes[i].closingDateId;
-      dates[i] = i - dataPoints.length;
+      dates[i] = i + 1; // Month is 1-based
     }
 
     return dates;
@@ -53,7 +53,7 @@ abstract class Chart {
     }
       
     // Set the chart attributes
-    //lineChart.showXAxis(true); 
+    lineChart.showXAxis(true); 
     lineChart.showYAxis(true); 
     lineChart.setPointColour(color(180,50,50,100));
     lineChart.setPointSize(5);

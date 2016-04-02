@@ -1,7 +1,6 @@
 class StateData {
   
   StringDict stateSymbol = new StringDict();
-  StringDict stateCompany = new StringDict();
 
   // Constructor will load in the data from the file
   StateData() {  
@@ -20,23 +19,12 @@ class StateData {
       if(!stateSymbol.hasKey(state)) {
         stateSymbol.set(state, coSym);
       }
-        
-      String coName = row.getString("coName");
-      if(!stateCompany.hasKey(state)) {
-        stateCompany.set(state, coName);
-      }
     }
   }
   
   boolean isStateMapped(String stateName) {
     return stateSymbol.hasKey(stateName);
   }
-  
-  String getStateSymbol(String stateName) {
-    return stateSymbol.get(stateName);
-  }
-  
-  String getStateCompany(String stateName) {
-    return stateCompany.get(stateName);
-  }
+ 
+
 }

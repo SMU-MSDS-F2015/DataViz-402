@@ -75,12 +75,4 @@ class USMap {
       return states.isStateMapped(this.currentState);
     }
   }
-
-  String getSymbol() {
-    return states.getStateSymbol(this.currentState);
-  }
-  
-  String getCompany() {
-    return states.getStateCompany(this.currentState);
-  }
 }

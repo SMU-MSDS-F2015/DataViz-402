@@ -1,6 +1,6 @@
 import org.gicentre.utils.stat.*;  
 
-abstract class Chart {
+abstract class Chart implements IChartData {
   boolean hasData = false;
   DateDataPoint[] dataPoints;
   String title;

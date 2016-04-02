@@ -1,0 +1,153 @@
+state,stateName,coSymbol,coName
+AL,Alabama,RF,Regions Financial Corporation
+AL,Alabama,VMC,Vulcan Materials Company
+AL,Alabama,PL,Protective Life Corporation
+AK,Alaska,GNCMA,"General Communication, Inc."
+AK,Alaska,NRIM,"Northrim BanCorp, Inc."
+AK,Alaska,ALSK,"Alaska Communications Systems Group, Inc."
+AZ,Arizona,FCX,"Freeport-McMoRan, Inc."
+AZ,Arizona,SCCO,Southern Copper Corporation
+AZ,Arizona,RSG,"Republic Services, Inc."
+AR,Arkansas,WMT,"Wal-Mart Stores, Inc."
+AR,Arkansas,TSN,"Tyson Foods, Inc."
+AR,Arkansas,MUR,Murphy Oil Corporation
+CA,California,AAPL,Apple Inc.
+CA,California,GOOG,Google Inc.
+CA,California,WFC,Wells Fargo & Company
+CO,Colorado,DISH,DISH Network
+CO,Colorado,CMG,"Chipotle Mexican Grill, Inc."
+CO,Colorado,DVA,DaVita HealthCare Partners Inc.
+CT,Connecticut,GE,General Electric Company
+CT,Connecticut,UTX,United Technologies Corporation
+CT,Connecticut,PCLN,Priceline Group Inc
+DE,Delaware,DD,E. I. du Pont de Nemours and Company
+DE,Delaware,INCY,Incyte Corporation
+DE,Delaware,NAVI,Navient Corp
+DC,District of Columbia,DHR,Danaher Corporation
+DC,District of Columbia,POM,"Pepco Holdings, Inc."
+DC,District of Columbia,GHC,Graham Holdings Co.
+FL,Florida,NEE,"NextEra Energy, Inc."
+FL,Florida,CSX,CSX Corporation
+FL,Florida,CCL,Carnival Corporation
+GA,Georgia,KO,Coca-Cola Company
+GA,Georgia,HD,"Home Depot, Inc."
+GA,Georgia,UPS,"United Parcel Service, Inc."
+HI,Hawaii,HE,"Hawaiian Electric Industries, Inc."
+HI,Hawaii,BOH,Bank of Hawaii Corporation
+HI,Hawaii,ALEX,"Alexander & Baldwin, Inc."
+ID,Idaho,MU,"Micron Technology, Inc."
+ID,Idaho,IDA,"IDACORP, Inc."
+ID,Idaho,MWIV,"MWI Veterinary Supply, Inc."
+IL,Illinois,ABBV,"AbbVie, Inc."
+IL,Illinois,BA,Boeing Company
+IL,Illinois,MCD,McDonald's Corporation
+IN,Indiana,LLY,Eli Lilly and Company
+IN,Indiana,SPG,"Simon Property Group, Inc."
+IN,Indiana,WLP,"WellPoint, Inc."
+IA,Iowa,PFG,"Principal Financial Group, Inc."
+IA,Iowa,CASY,"Casey's General Stores, Inc."
+IA,Iowa,MDP,Meredith Corporation
+KS,Kansas,S,Sprint Corp.
+KS,Kansas,SPR,"Spirit AeroSystems Holdings, Inc."
+KS,Kansas,WR,"Westar Energy, Inc."
+KY,Kentucky,YUM,"YUM! Brands, Inc."
+KY,Kentucky,HUM,"Humana, Inc."
+KY,Kentucky,BF.B,Brown-Forman Corporation
+LA,Louisiana,CTL,"CenturyLink, Inc."
+LA,Louisiana,ETR,Entergy Corporation
+LA,Louisiana,LAMR,Lamar Advertising Company
+ME,Maine,IDXX,"IDEXX Laboratories, Inc."
+ME,Maine,WEX,"WEX, Inc."
+ME,Maine,CAC,Camden National Corporation
+MD,Maryland,LMT,Lockheed Martin Corporation
+MD,Maryland,MAR,"Marriott International, Inc."
+MD,Maryland,TROW,T. Rowe Price Group
+MA,Massachusetts,BIIB,"Biogen Idec, Inc."
+MA,Massachusetts,EMC,EMC Corporation
+MA,Massachusetts,TJX,"TJX Companies, Inc."
+MI,Michigan,DOW,Dow Chemical Company
+MI,Michigan,F,Ford Motor Company
+MI,Michigan,GM,General Motors Company
+MN,Minnesota,MMM,3M Company
+MN,Minnesota,UNH,UnitedHealth Group Incorporated
+MN,Minnesota,USB,U.S. Bancorp
+MS,Mississippi,CALM,"Cal-Maine Foods, Inc."
+MS,Mississippi,HBHC,Hancock Holding Company
+MS,Mississippi,BXS,"BancorpSouth, Inc."
+MO,Missouri,ESRX,Express Scripts Holding Company
+MO,Missouri,MON,Monsanto Company
+MO,Missouri,EMR,Emerson Electric Co.
+MT,Montana,GBCI,"Glacier Bancorp, Inc."
+MT,Montana,SWC,Stillwater Mining Company
+MT,Montana,FIBK,"First Interstate BancSystem, Inc."
+NE,Nebraska,BRK-A,Berkshire Hathaway Inc.
+NE,Nebraska,UNP,Union Pacific Corporation
+NE,Nebraska,CAG,"ConAgra Foods, Inc."
+NV,Nevada,LVS,Las Vegas Sands Corp.
+NV,Nevada,WYNN,"Wynn Resorts, Limited"
+NV,Nevada,MGM,MGM Resorts International
+NH,New Hampshire,WTM,"White Mountains Insurance Group, Ltd."
+NH,New Hampshire,AIN,Albany International Corp.
+NH,New Hampshire,SXI,Standex International Corporation
+NJ,New Jersey,JNJ,Johnson & Johnson
+NJ,New Jersey,MRK,"Merck & Co., Inc."
+NJ,New Jersey,CELG,Celgene Corporation
+NM,New Mexico,PNM,"PNM Resources, Inc."
+NM,New Mexico,EMKR,EMCORE Corporation
+NY,New York,JPM,JPMorgan Chase & Co.
+NY,New York,PFE,Pfizer Inc.
+NY,New York,IBM,International Business Machines Corporation
+NC,North Carolina,BAC,Bank of America Corporation
+NC,North Carolina,LOW,"Lowe's Companies, Inc."
+NC,North Carolina,DUK,Duke Energy Corporation
+ND,North Dakota,MDU,"MDU Resources Group, Inc."
+ND,North Dakota,IRET,Investors Real Estate Trust
+ND,North Dakota,TITN,Titan Machinery Inc.
+OH,Ohio,PG,Procter & Gamble Company
+OH,Ohio,KR,Kroger Co.
+OH,Ohio,AEP,"American Electric Power Company, Inc."
+OK,Oklahoma,WMB,"Williams Companies, Inc."
+OK,Oklahoma,DVN,Devon Energy Corporation
+OK,Oklahoma,WPZ,Williams Partners L.P.
+OR,Oregon,NKE,"NIKE, Inc."
+OR,Oregon,PCP,Precision Castparts Corp.
+OR,Oregon,FLIR,"FLIR Systems, Inc."
+PA,Pennsylvania,CMCSA,Comcast Corporation
+PA,Pennsylvania,PNC,"PNC Financial Services Group, Inc."
+PA,Pennsylvania,PPG,"PPG Industries, Inc."
+RI,Rhode Island,CVS,CVS Health Corporation
+RI,Rhode Island,CFG,"Citizens Financial Group, Inc."
+RI,Rhode Island,TXT,Textron Inc.
+SC,South Carolina,SCG,SCANA Corporation
+SC,South Carolina,SON,Sonoco Products Company
+SC,South Carolina,DDD,3D Systems Corporation
+SD,South Dakota,BKH,Black Hills Corporation
+SD,South Dakota,NWE,NorthWestern Corporation
+SD,South Dakota,RAVN,"Raven Industries, Inc."
+TN,Tennessee,FDX,FedEx Corporation
+TN,Tennessee,HCA,"HCA Holdings, Inc."
+TN,Tennessee,IP,International Paper Company
+TX,Texas,XOM,Exxon Mobil Corporation
+TX,Texas,T,AT&T Inc.
+TX,Texas,SLB,Schlumberger NV
+UT,Utah,EXR,Extra Space Storage Inc.
+UT,Utah,HUN,Huntsman Corporation
+UT,Utah,ZION,Zions Bancorporation
+VT,Vermont,GMCR,"Keurig Green Mountain, Inc."
+VT,Vermont,MBVT,"Merchants Bancshares, Inc."
+VT,Vermont,CWST,"Casella Waste Systems, Inc."
+VA,Virginia,MO,"Altria Group, Inc."
+VA,Virginia,GD,General Dynamics Corporation
+VA,Virginia,COF,Capital One Financial Corporation
+WA,Washington,MSFT,Microsoft Corporation
+WA,Washington,AMZN,"Amazon.com, Inc."
+WA,Washington,COST,Costco Wholesale Corporation
+WV,West Virginia,UBSI,"United Bankshares, Inc."
+WV,West Virginia,WSBC,"WesBanco, Inc."
+WV,West Virginia,CHCO,City Holding Company
+WI,Wisconsin,JCI,"Johnson Controls, Inc."
+WI,Wisconsin,FISV,"Fiserv, Inc."
+WI,Wisconsin,ROK,"Rockwell Automation, Inc."
+WY,Wyoming,CLD,"Cloud Peak Energy, Inc."
+WY,Wyoming,URZ,Uranerz Energy Corporation
+WY,Wyoming,USEG,U.S. Energy Corp.

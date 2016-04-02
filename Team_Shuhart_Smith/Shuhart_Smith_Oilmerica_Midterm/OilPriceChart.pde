@@ -17,6 +17,7 @@ class OilPriceChart extends Chart {
     super.title = title;
     super.xUnits = "Month in 2015";
     super.yUnits = "Dallars/Barrel";
+    this.position = 1;
     this.source = "Quandl (www.quandl.com)";
     super.setData();
   }

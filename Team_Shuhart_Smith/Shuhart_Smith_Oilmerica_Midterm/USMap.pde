@@ -34,7 +34,7 @@ class USMap {
     noFill();
 
     // fit the map into the resizeable window to allow showing chart beneath
-    map.transform(0, 0, width, height / 2);
+    map.transform(0, 0, width, height / 3);
     map.draw();
 
     // Check to see if mouse is hovered over the state, and highlight accordingly

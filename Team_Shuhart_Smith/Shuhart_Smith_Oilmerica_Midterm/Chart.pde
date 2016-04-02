@@ -8,6 +8,7 @@ abstract class Chart {
   String source;
   String yUnits;
   String xUnits;
+  int position;
  
   // Default constructor -- used with no symbol in initial setup
   Chart() {
@@ -61,17 +62,17 @@ abstract class Chart {
     lineChart.setYAxisLabel(yUnits);
 
     // Draw the chart, based on size of the window.
-    lineChart.draw(30, height / 2 + 30,width - 60, height / 2 - 60); 
+    lineChart.draw(30, height /  3 * (position + 1) + 30,width - 60, height / 3 - 60); 
 
     // Print the Title
     fill(100, 0, 100);
     textSize(int(width /30));
     textAlign(CENTER);
-    text(this.title , width / 2 ,height / 2 + height / 30 + 10);
+    text(this.title , width / 2 , height / 3 * (position + 1) + height / 30 + 10);
  
     // Print the Footnote
     fill(0, 20, 50);
     textSize(11);
-    text("Source: " + source, width - 4 * source.length() ,height - 10);
+    text("Source: " + source, width - 4 * source.length() , height / 3 * (position + 2) - 10);
   }
 }

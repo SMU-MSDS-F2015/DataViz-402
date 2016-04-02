@@ -26,7 +26,7 @@ class Controller {
   void draw() {
     // Draw the map, then ticker
     map.draw();
-    //jobsChart.draw();
+    jobsChart.draw();
     oilPriceChart.draw();
   }
   
@@ -34,7 +34,7 @@ class Controller {
  
     // Get the company/stock chart for the given state
     if (map.isStateSelected()) {
-      //jobsChart = new JobsChart(sketchWindow, map.currentState);
+      jobsChart = new JobsChart(sketchWindow, map.currentState);
       oilPriceChart = new OilPriceChart(sketchWindow);
     }
   }

@@ -6,6 +6,7 @@ class USMap {
   RShape map;
   String currentState;
   StateData states;
+  DataOilProduction stateOil;
 
   // Constructor to set up the map and load the state data 
   USMap(PApplet parent) {
@@ -18,7 +19,10 @@ class USMap {
     map = RG.loadShape("usmap.svg");
 
      // Load in the company data and set the state/company mappings
-    states = new StateData();
+    this.states = new StateData();
+    
+    // Load the oil production data to show on the map
+    this.stateOil = new DataOilProduction();
   }
   
   // Draw the map, and if mouse is over state, highlight that state (and set as currentState)
@@ -40,8 +44,9 @@ class USMap {
     for(RGeomElem state : map.children) {
       String stateCode = state.name.toUpperCase();
       // Now, color oil production
-      if (stateOil.findRow(stateCode, 0) != null) {
-        int production = stateOil.findRow(stateCode, 0).getInt(1);
+
+      int production = stateOil.getOilByStateCode(stateCode);
+      if (production > 0) {
         int colorDepth = 255 - floor((log(production) * 10));
         fill(colorDepth, colorDepth - 100, colorDepth - 100);
         noStroke();

@@ -12,9 +12,14 @@ class JobsChart extends Chart {
     dataPoints = bls.getBlsForStateCode(stateCode);
     println("in JobChart");
     println(dataPoints.length);
-    this.hasData = true;
+    if (dataPoints[0] != null) {
+      this.hasData = true;
+    }
     this.title = "Jobs Count for " + stateCode;
     super.title = title;
+    super.source = "Bureau of Labor & Statistics";
+    super.yUnits = "Thousands of Jobs";
+    super.xUnits = "Months";
     super.setData();
   }
   

@@ -5,6 +5,9 @@ abstract class Chart {
   DateDataPoint[] dataPoints;
   String title;
   XYChart lineChart;
+  String source;
+  String yUnits;
+  String xUnits;
  
   // Default constructor -- used with no symbol in initial setup
   Chart() {
@@ -15,7 +18,9 @@ abstract class Chart {
   }
 
   void setData() {
-    lineChart.setData(this.getDateIds(), this.getDailyValues());
+    if (this.hasData) {
+      lineChart.setData(this.getDateIds(), this.getDailyValues());
+    }
   }
 
   float[] getDailyValues() {
@@ -48,15 +53,15 @@ abstract class Chart {
     }
       
     // Set the chart attributes
-    lineChart.showXAxis(true); 
+    //lineChart.showXAxis(true); 
     lineChart.showYAxis(true); 
     lineChart.setPointColour(color(180,50,50,100));
     lineChart.setPointSize(5);
     lineChart.setLineWidth(2);
 
     // Set the Axes labels
-    lineChart.setXAxisLabel("Business Days Ago");
-    lineChart.setYAxisLabel("Closing Price");
+    lineChart.setXAxisLabel(xUnits);
+    lineChart.setYAxisLabel(yUnits);
 
     // Draw the chart, based on size of the window.
     lineChart.draw(30, height / 2 + 30,width - 60, height / 2 - 60); 
@@ -70,6 +75,6 @@ abstract class Chart {
     // Print the Footnote
     fill(0, 20, 50);
     textSize(11);
-    text("Source: Yahoo Finance", width - 70 ,height - 10);
+    text("Source: " + source, width - 4 * source.length() ,height - 10);
   }
 }

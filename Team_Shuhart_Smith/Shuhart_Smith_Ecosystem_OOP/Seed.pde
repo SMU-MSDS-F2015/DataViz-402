@@ -1,0 +1,1 @@
+class Seed extends Plant implements ISprouts {}

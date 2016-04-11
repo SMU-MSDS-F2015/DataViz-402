@@ -3,6 +3,7 @@
 */
 
 class Ecosystem {
+  final int simulationYears = 10;
   Habitat[] habitats;
   
   Ecosystem() {
@@ -17,5 +18,11 @@ class Ecosystem {
       //The Woodland Park is in Seattle
       //Green Lake is in Greenlake Park
       //Green Lake Park is adjacent to Woodland Park
+  }
+  
+  void Simulate() {
+    for(int year = 0; year < simulationYears; year++) {
+      //TODO: Call simulateYear on each habitat
+    }
   }
 }

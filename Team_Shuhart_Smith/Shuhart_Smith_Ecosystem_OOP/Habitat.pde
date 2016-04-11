@@ -15,7 +15,16 @@ abstract class Habitat {
     this.Populate();
   }
   
-  void Populate() {}
+  Habitat getAdjacentHabitat() {return null;}
+  
+  void simulateYear(int year) {
+    //TODO: call on each of the inhabitants:
+    //procreate()
+    //migrate()
+    //checkPulse() (If dead, go to graveyard)
+  }
+  
+  void Populate() {} // This will create one of each appropriate plant/animal to start with. Perhaps random?
 }
 
 class Zoo extends Habitat{

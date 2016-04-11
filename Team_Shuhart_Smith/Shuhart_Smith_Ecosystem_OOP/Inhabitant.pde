@@ -3,5 +3,9 @@
 */
 
 abstract class Inhabitant {
+  float motility;
+  float lifeExpectancy;
+  float averageOffspring;
+  
   Habitat habitat;
 }

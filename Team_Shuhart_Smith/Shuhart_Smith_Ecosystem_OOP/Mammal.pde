@@ -16,8 +16,6 @@ class Mammal extends Animal {}
 class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
   
   boolean doIMigrate() {return false;} // TODO: add probability to this
-  boolean doIReproduce() {return true;} // TODO: add probability to this
-  Lion[] produceOffspring() {return new Lion[0];}
   
   boolean doIDie() {return false;} // TODO: add probability to this
   
@@ -35,5 +33,36 @@ class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
     }
     
     return newZoo;
+  }
+
+  boolean doIReproduce() {return true;}
+  
+  Lion[] produceOffspring() {
+    Lion[] offspring = new Lion[1];
+    offspring[0] = new Lion();
+    return offspring;
+  }
+
+
+}
+
+class Bat extends Mammal implements IGivesBirth {
+  boolean doIReproduce() {return true;}
+  
+  Bat[] produceOffspring() {
+    Bat[] offspring = new Bat[1];
+    offspring[0] = new Bat();
+    return offspring;
+  }
+}
+
+
+class Dog extends Mammal implements IGivesBirth {
+  boolean doIReproduce() {return true;}
+  
+  Dog[] produceOffspring() {
+    Dog[] offspring = new Dog[1];
+    offspring[0] = new Dog();
+    return offspring;
   }
 }

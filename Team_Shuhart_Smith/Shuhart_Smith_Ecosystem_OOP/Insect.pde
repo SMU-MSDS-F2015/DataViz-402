@@ -14,3 +14,23 @@
   All the other species will be male or female.
 */
 class Insect extends Animal {}
+
+class Dragonfly extends Insect implements IReproducable  {
+  boolean doIReproduce() {return true;}
+  
+  Dragonfly[] produceOffspring() {
+    Dragonfly[] offspring = new Dragonfly[1];
+    offspring[0] = new Dragonfly();
+    return offspring;
+  }
+
+}
+class Moth extends Insect implements IReproducable  {
+  boolean doIReproduce() {return true;}
+  
+  Moth[] produceOffspring() {
+    Moth[] offspring = new Moth[1];
+    offspring[0] = new Moth();
+    return offspring;
+  }
+}

@@ -8,16 +8,14 @@ class Ecosystem {
   
   Ecosystem() {
     habitats = new Habitat[8];
-    habitats[0] = new Zoo("Woodland Park");
-    // Woodland Park Zoo is in Woodland Park
-    // 7 more to go:
-      //The Dallas Zoo is in Dallas
-      //Lake Cliff Park is in Dallas
-      //Lake Cliff is in Lake Cliff Park
-      //Oak Cliff Founders Park is adjacent to Lake Cliff Park
-      //The Woodland Park is in Seattle
-      //Green Lake is in Greenlake Park
-      //Green Lake Park is adjacent to Woodland Park
+    habitats[0] = new Zoo("Woodland Park Zoo");
+    habitats[1] = new Zoo("Dallas Zoo");
+    habitats[2] = new Park("Lake Cliff Park");
+    habitats[3] = new Park("Green Lake Park");
+    habitats[4] = new Park("Oak Cliff Founders Park");
+    habitats[5] = new Park("Woodland Park");
+    habitats[6] = new Lake("Lake Cliff");
+    habitats[7] = new Lake("Green Lake");
   }
   
   void Simulate() {

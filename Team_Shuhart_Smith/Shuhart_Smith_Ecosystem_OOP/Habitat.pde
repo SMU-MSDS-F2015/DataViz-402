@@ -6,7 +6,7 @@
 */
 abstract class Habitat {
   String name;
-  Inhabitant[] inhabitants;
+  ArrayList<Inhabitant> inhabitants;
   
   Habitat() {}
   
@@ -30,14 +30,45 @@ abstract class Habitat {
 class Zoo extends Habitat{
   Zoo(String name) {
     super(name);
+    Populate();
   }
   
   // Need to create the inhabitants of the Zoo
   void Populate() {}
+    //Oak Tree
+    //Maple Tree
+    //Moth
+    //Bat
+    //Lions
 }
-/*
-class Park extends Habitat{}
-class Lake extends Habitat{}
-  Lakes may have catfish and trout
- 
-*/
+
+class Park extends Habitat{
+  Park(String name) {
+    super(name);
+    Populate();
+  }
+  
+  // Need to create the inhabitants of the Park
+  void Populate() {}
+    //Oak Tree
+    //Maple Tree
+    //Dog
+    //Bat
+    //Moth
+    //Dragonfly
+  
+}
+
+class Lake extends Habitat{
+  Lake(String name) {
+    super(name);
+    Populate();
+  }
+  
+  // Need to create the inhabitants of the Lake
+  void Populate() {}
+    //Bass
+    //Cod
+    //Moth
+    //Dragonfly
+}

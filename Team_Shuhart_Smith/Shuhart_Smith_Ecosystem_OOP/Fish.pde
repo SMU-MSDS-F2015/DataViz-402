@@ -8,3 +8,6 @@ All the other species will be male or female.
 */
 
 class Fish extends Animal {}
+
+class Bass extends Fish {}
+class Cod extends Fish {}

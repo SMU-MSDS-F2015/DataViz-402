@@ -41,12 +41,18 @@ class Zoo extends Habitat{
   }
   
   // Need to create the inhabitants of the Zoo
-  void Populate() {}
-    //Oak Tree
-    //Maple Tree
-    //Moth
-    //Bat
-    //Lions
+  void Populate() {
+  
+    inhabitants = new ArrayList<Inhabitant>();
+
+    inhabitants.add(new Oak());
+    inhabitants.add(new Maple());
+    
+    //TODO: Add one male, one female
+    inhabitants.add(new Moth());
+    inhabitants.add(new Bat());
+    inhabitants.add(new Lion());
+  }
 }
 
 class Park extends Habitat{
@@ -56,14 +62,18 @@ class Park extends Habitat{
   }
   
   // Need to create the inhabitants of the Park
-  void Populate() {}
-    //Oak Tree
-    //Maple Tree
-    //Dog
-    //Bat
-    //Moth
-    //Dragonfly
-  
+  void Populate() {
+
+    inhabitants = new ArrayList<Inhabitant>();
+
+    inhabitants.add(new Oak());
+    inhabitants.add(new Maple());
+
+    //TODO: Add one male, one female
+    inhabitants.add(new Moth());
+    inhabitants.add(new Bat());
+    inhabitants.add(new Dog());
+  }
 }
 
 class Lake extends Habitat{
@@ -73,9 +83,14 @@ class Lake extends Habitat{
   }
   
   // Need to create the inhabitants of the Lake
-  void Populate() {}
-    //Bass
-    //Cod
-    //Moth
-    //Dragonfly
+  void Populate() {
+
+    inhabitants = new ArrayList<Inhabitant>();
+ 
+    //TODO: Add one male, one female
+    inhabitants.add(new Bass());
+    inhabitants.add(new Cod());
+    inhabitants.add(new Moth());
+    inhabitants.add(new Dragonfly());
+  }
 }

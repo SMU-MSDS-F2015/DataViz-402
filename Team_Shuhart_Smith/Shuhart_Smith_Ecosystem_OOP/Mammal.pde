@@ -17,12 +17,6 @@ class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
   
   boolean doIMigrate() {return false;} // TODO: add probability to this
   
-  boolean doIDie() {return false;} // TODO: add probability to this
-  
-  void proceedToGrave() {
-    println ("Lion dying and proceeding to graveyard");
-  }
-  
   Habitat migrate(Habitat currentZoo) {
     // There are only two zoos. Migrate to the other
     Habitat newZoo = null;
@@ -38,12 +32,19 @@ class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
   boolean doIReproduce() {return true;}
   
   Lion[] produceOffspring() {
-    Lion[] offspring = new Lion[1];
-    offspring[0] = new Lion();
+    int count = int(random(1, 4));
+    Lion[] offspring = new Lion[count];
+    for(int i=0; i < count; i++) {
+      offspring[i] = new Lion();
+    }
     return offspring;
   }
 
-
+  boolean doIDie() {return false;} // TODO: add probability to this
+  
+  void proceedToGrave() {
+    println ("Lion dying and proceeding to graveyard");
+  }
 }
 
 class Bat extends Mammal implements IGivesBirth {

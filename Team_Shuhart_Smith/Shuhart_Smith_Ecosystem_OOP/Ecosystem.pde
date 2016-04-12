@@ -1,3 +1,5 @@
+import org.gicentre.utils.stat.*;  
+
 /*
    There is one ecosystem--it is globally accessible. When created, it will create and hold each of the Zoos, Parks, and Lakes, and populate each in term.
 */
@@ -6,7 +8,9 @@ class Ecosystem implements IChartable {
   final int simulationYears = 10;
   Habitat[] habitats;
   
-  Ecosystem() {
+  Ecosystem() {}
+
+  Ecosystem(PApplet sketchWindow) {
     habitats = new Habitat[8];
     habitats[0] = new Zoo("Woodland Park Zoo");
     habitats[1] = new Zoo("Dallas Zoo");
@@ -16,15 +20,17 @@ class Ecosystem implements IChartable {
     habitats[5] = new Park("Woodland Park");
     habitats[6] = new Lake("Lake Cliff");
     habitats[7] = new Lake("Green Lake");
+    simulate();
+    drawChart(sketchWindow);
   }
   
-  void Simulate() {
+  void simulate() {
     for(int year = 0; year < simulationYears; year++) {
       //TODO: Call simulateYear on each habitat
     }
   }
   
-  String[] GetCategories() {
+  String[] getCategories() {
     String[] inhabitantTypes = new String[11];
     inhabitantTypes[0] = "Bass";
     inhabitantTypes[1] = "Cod";
@@ -41,12 +47,31 @@ class Ecosystem implements IChartable {
     return inhabitantTypes;
   }
   
-  int[] GetCounts() {
-    int[] counts = new int[11];
+  // Just stub this out for now and get the counts later.
+  
+  float[] getValues() {
+    float[] counts = new float[11];
     for(int i=0; i<11; i++) {
       counts[i] = int(random(0,100));
     }
     
     return counts;
+  }
+  
+  void drawChart(PApplet sketchWindow) {
+    barChart = new BarChart(sketchWindow);
+       
+    barChart.showValueAxis(true);
+    barChart.showCategoryAxis(true);
+    barChart.transposeAxes(true);
+    barChart.setBarColour(color(200,80,80,150));
+    barChart.setBarGap(4);
+  
+    barChart.setData(this.getValues());
+    barChart.setBarLabels(this.getCategories());
+    barChart.draw(100, 100, 500, 500);
+    fill(120);
+    textSize(18);
+    text("Number of Inhabitants at Simulation End", 200, 70);
   }
 }

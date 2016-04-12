@@ -15,7 +15,7 @@
 */
 class Insect extends Animal {}
 
-class Dragonfly extends Insect implements IReproducable  {
+class Dragonfly extends Insect implements ILaysEggs  {
   boolean doIReproduce() {return true;}
   
   Dragonfly[] produceOffspring() {
@@ -25,7 +25,7 @@ class Dragonfly extends Insect implements IReproducable  {
   }
 
 }
-class Moth extends Insect implements IReproducable  {
+class Moth extends Insect implements ILaysEggs  {
   boolean doIReproduce() {return true;}
   
   Moth[] produceOffspring() {

@@ -11,8 +11,7 @@
  Zoos trade lions, but not bats. Lions won't migrate to parks, but bats might. Dogs may frequent multiple parks.
  */
 
-class Mammal extends Animal {
-}
+class Mammal extends Animal {}
 
 class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
 

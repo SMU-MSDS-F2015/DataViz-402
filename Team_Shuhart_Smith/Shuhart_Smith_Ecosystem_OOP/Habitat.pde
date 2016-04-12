@@ -1,3 +1,5 @@
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /*
   The various habitats are implemented here, including:
     * Zoo
@@ -6,7 +8,7 @@
 */
 abstract class Habitat {
   String name;
-  ArrayList<Inhabitant> inhabitants;
+  CopyOnWriteArrayList<Inhabitant> inhabitants;
   
   Habitat() {}
   
@@ -18,7 +20,28 @@ abstract class Habitat {
   Habitat getAdjacentHabitat() {return null;}
   
   void simulateYear(int year) {
-    //TODO: call on each of the inhabitants:
+
+    // Call on each of the inhabitants:
+    //boolean doIMigrate()
+    //Habitat migrate(Habitat oldHome)
+    //boolean doIReproduce()
+    //Inhabitant[] produceOffspring()
+    //boolean doIDie()
+    // proceedToGrave()
+
+    for(Inhabitant inhabitant : inhabitants) {
+      //if (inhabitant.doIMigrate()
+      if (inhabitant.doIReproduce()) {
+        for(Inhabitant offspring : inhabitant.produceOffspring()) {
+          inhabitants.add(offspring);
+        }
+      }
+      
+      if (inhabitant.doIDie()) {
+        inhabitants.remove(inhabitant);
+        inhabitant.proceedToGrave();
+      }
+    }
     //boolean doIMigrate()
     //Habitat migrate(Habitat oldHome)
     //boolean doIReproduce()
@@ -31,7 +54,7 @@ abstract class Habitat {
     println ("Lion dying and proceeding to graveyard");
   }
   
-  void Populate() {} // This will create one of each appropriate plant/animal to start with. Perhaps random?
+  void Populate() {} // This will create one of each appropriate plant/animal to start with. // TODO: Male/Female one each
 }
 
 class Zoo extends Habitat{
@@ -43,7 +66,7 @@ class Zoo extends Habitat{
   // Need to create the inhabitants of the Zoo
   void Populate() {
   
-    inhabitants = new ArrayList<Inhabitant>();
+    inhabitants = new CopyOnWriteArrayList<Inhabitant>();
 
     inhabitants.add(new Oak());
     inhabitants.add(new Maple());
@@ -64,7 +87,7 @@ class Park extends Habitat{
   // Need to create the inhabitants of the Park
   void Populate() {
 
-    inhabitants = new ArrayList<Inhabitant>();
+    inhabitants = new CopyOnWriteArrayList<Inhabitant>();
 
     inhabitants.add(new Oak());
     inhabitants.add(new Maple());
@@ -85,7 +108,7 @@ class Lake extends Habitat{
   // Need to create the inhabitants of the Lake
   void Populate() {
 
-    inhabitants = new ArrayList<Inhabitant>();
+    inhabitants = new CopyOnWriteArrayList<Inhabitant>();
  
     //TODO: Add one male, one female
     inhabitants.add(new Bass());

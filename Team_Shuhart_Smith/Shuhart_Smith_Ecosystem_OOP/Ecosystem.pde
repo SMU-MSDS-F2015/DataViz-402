@@ -28,7 +28,10 @@ class Ecosystem implements IChartable {
   
   void simulate() {
     for(int year = 0; year < simulationYears; year++) {
-      //TODO: Call simulateYear on each habitat
+      //Call simulateYear on each habitat
+      for(Habitat habitat : habitats) {
+        habitat.simulateYear(year);
+      }
     }
   }
   
@@ -63,9 +66,9 @@ class Ecosystem implements IChartable {
     int i = 0;
     for(String name : categories) {
       counts[i] = speciesCounts.get(name);
-      i++;
       println(name);
       println(counts[i]);
+      i++;
     }
       
     return counts;
@@ -79,6 +82,7 @@ class Ecosystem implements IChartable {
     barChart.showCategoryAxis(true);
     barChart.transposeAxes(true);
     barChart.setBarColour(color(200,80,80,150));
+    barChart.setMinValue(0);
     barChart.setBarGap(4);
   
     barChart.setData(this.getValues());

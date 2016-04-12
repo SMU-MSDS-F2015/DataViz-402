@@ -3,8 +3,8 @@
 */
 
 class Seed extends Plant implements ISproutable {
-  boolean doITransform() {return false;};
-  Plant Transform() {return new Plant();};
+  boolean doITransform() {return false;}
+  Plant Transform() {return new Plant();}
 }
 
 class OakSeed extends Seed {}

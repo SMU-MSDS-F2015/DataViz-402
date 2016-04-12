@@ -17,7 +17,7 @@ class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
   
   boolean doIMigrate() {return false;} // TODO: add probability to this
   boolean doIReproduce() {return true;} // TODO: add probability to this
-  void produceOffspring() {}
+  Lion[] produceOffspring() {return new Lion[0];}
   
   boolean doIDie() {return false;} // TODO: add probability to this
   

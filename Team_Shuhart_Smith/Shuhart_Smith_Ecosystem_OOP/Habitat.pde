@@ -19,9 +19,16 @@ abstract class Habitat {
   
   void simulateYear(int year) {
     //TODO: call on each of the inhabitants:
-    //procreate()
-    //migrate()
-    //checkPulse() (If dead, go to graveyard)
+    //boolean doIMigrate()
+    //Habitat migrate(Habitat oldHome)
+    //boolean doIReproduce()
+    //Inhabitant[] produceOffspring()
+    //boolean doIDie()
+    // proceedToGrave()
+  }
+  
+   {
+    println ("Lion dying and proceeding to graveyard");
   }
   
   void Populate() {} // This will create one of each appropriate plant/animal to start with. Perhaps random?

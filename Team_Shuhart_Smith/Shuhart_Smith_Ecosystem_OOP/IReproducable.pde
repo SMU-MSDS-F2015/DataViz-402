@@ -8,7 +8,7 @@
 
 interface IReproducable {
   boolean doIReproduce();
-  void produceOffspring();
+  Inhabitant[] produceOffspring();
 }
 
 interface IGivesBirth extends IReproducable {}

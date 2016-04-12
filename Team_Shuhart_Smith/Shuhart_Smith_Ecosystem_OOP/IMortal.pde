@@ -1,4 +1,4 @@
 interface IMortal {
-  boolean doIDie(int year);
-  void proceedToGraveyear();
+  boolean doIDie();
+  void proceedToGrave();
 }

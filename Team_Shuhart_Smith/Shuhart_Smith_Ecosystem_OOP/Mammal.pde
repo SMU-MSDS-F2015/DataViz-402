@@ -13,9 +13,17 @@
 
 class Mammal extends Animal {}
 
-class Lion extends Mammal implements IMigratable {
+class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
   
-  boolean doIMigrate() {return false;}
+  boolean doIMigrate() {return false;} // TODO: add probability to this
+  boolean doIReproduce() {return true;} // TODO: add probability to this
+  void produceOffspring() {}
+  
+  boolean doIDie() {return false;} // TODO: add probability to this
+  
+  void proceedToGrave() {
+    println ("Lion dying and proceeding to graveyard");
+  }
   
   Habitat migrate(Habitat currentZoo) {
     // There are only two zoos. Migrate to the other

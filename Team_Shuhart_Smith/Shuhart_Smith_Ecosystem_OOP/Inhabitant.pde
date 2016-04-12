@@ -6,6 +6,7 @@ abstract class Inhabitant {
   float motility;
   float lifeExpectancy;
   float averageOffspring;
+  int age;
   
   Habitat habitat;
 }

@@ -17,17 +17,16 @@ class Mammal extends Animal {
 class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
 
   boolean doIMigrate() {
-    int chance;
     int success = 80;
-    for (int i = 0; i < 10; i++) {
-      chance = int(random(1, 100));
-      if (chance >= success) {      
-        return true;
-      } else {
-        return false;
-      }
-    }
-    return false;
+    int chance = int(random(1, 100));
+    println(chance);
+    if (chance >= success) {
+      print("Chance was more than " + success + " at " + chance);
+      return true;
+    } else {
+      print("Chance was less than " + success + " at " + chance);
+      return false;
+    }    
   } // TODO: add probability to this
 
   Habitat migrate(Habitat currentZoo) {
@@ -56,17 +55,16 @@ class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
   }
 
   boolean doIDie() {
-    int chance;
     int success = 80;
-    for (int i = 0; i < 10; i++) {
-      chance = int(random(1, 100));
-      if (chance >= success) {      
-        return true;
-      } else {
-        return false;
-      }
+    int chance = int(random(1, 100));
+    println(chance);
+    if (chance >= success) {
+      print("Chance was more than " + success + " at " + chance);
+      return true;
+    } else {
+      print("Chance was less than " + success + " at " + chance);
+      return false;
     }
-    return false;
   } // TODO: add probability to this
 
   void proceedToGrave() {

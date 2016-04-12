@@ -1,4 +1,5 @@
 import org.gicentre.utils.stat.*;  
+import java.util.*;
 
 /*
    There is one ecosystem--it is globally accessible. When created, it will create and hold each of the Zoos, Parks, and Lakes, and populate each in term.
@@ -7,19 +8,20 @@ import org.gicentre.utils.stat.*;
 class Ecosystem implements IChartable {
   final int simulationYears = 10;
   Habitat[] habitats;
+  HashMap<String, Integer> speciesCounts = new HashMap<String, Integer>();
   
   Ecosystem() {}
 
   Ecosystem(PApplet sketchWindow) {
-    habitats = new Habitat[8];
-    habitats[0] = new Zoo("Woodland Park Zoo");
-    habitats[1] = new Zoo("Dallas Zoo");
-    habitats[2] = new Park("Lake Cliff Park");
-    habitats[3] = new Park("Green Lake Park");
-    habitats[4] = new Park("Oak Cliff Founders Park");
-    habitats[5] = new Park("Woodland Park");
-    habitats[6] = new Lake("Lake Cliff");
-    habitats[7] = new Lake("Green Lake");
+    this.habitats = new Habitat[8];
+    this.habitats[0] = new Zoo("Woodland Park Zoo");
+    this.habitats[1] = new Zoo("Dallas Zoo");
+    this.habitats[2] = new Park("Lake Cliff Park");
+    this.habitats[3] = new Park("Green Lake Park");
+    this.habitats[4] = new Park("Oak Cliff Founders Park");
+    this.habitats[5] = new Park("Woodland Park");
+    this.habitats[6] = new Lake("Lake Cliff");
+    this.habitats[7] = new Lake("Green Lake");
     simulate();
     drawChart(sketchWindow);
   }
@@ -30,35 +32,47 @@ class Ecosystem implements IChartable {
     }
   }
   
+  void getSpeciesCounts() {
+    for(Habitat habitat : this.habitats) {
+      for(Inhabitant inhabitant : habitat.inhabitants) {
+        String className = inhabitant.getClass().toString();
+
+        // class Shuhart_Smith_Ecosystem_OOP$Oak
+        String inhabitantType = className.substring(34);
+
+        if (speciesCounts.containsKey(inhabitantType))
+          speciesCounts.put(inhabitantType, speciesCounts.get(inhabitantType) + 1);
+        else
+          speciesCounts.put(inhabitantType, 1);
+      }
+    }
+  }
+  
   String[] getCategories() {
-    String[] inhabitantTypes = new String[11];
-    inhabitantTypes[0] = "Bass";
-    inhabitantTypes[1] = "Cod";
-    inhabitantTypes[2] = "Dragonflies";
-    inhabitantTypes[3] = "Moths";
-    inhabitantTypes[4] = "Bats";
-    inhabitantTypes[5] = "Lions";
-    inhabitantTypes[6] = "Dogs";
-    inhabitantTypes[7] = "Oaks";
-    inhabitantTypes[8] = "Maple";
-    inhabitantTypes[9] = "Oak Seeds";
-    inhabitantTypes[10] = "Maple Seeds";
-    
-    return inhabitantTypes;
+    String[] species = speciesCounts.keySet().toArray(new String[0]);
+    Arrays.sort(species);
+    return species;
   }
   
   // Just stub this out for now and get the counts later.
   
   float[] getValues() {
-    float[] counts = new float[11];
-    for(int i=0; i<11; i++) {
-      counts[i] = int(random(0,100));
-    }
     
+    String[] categories = getCategories();
+    float[] counts = new float[categories.length];
+    int i = 0;
+    for(String name : categories) {
+      counts[i] = speciesCounts.get(name);
+      i++;
+      println(name);
+      println(counts[i]);
+    }
+      
     return counts;
   }
   
   void drawChart(PApplet sketchWindow) {
+    getSpeciesCounts();
     barChart = new BarChart(sketchWindow);
        
     barChart.showValueAxis(true);

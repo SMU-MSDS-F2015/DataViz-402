@@ -4,6 +4,5 @@ BarChart barChart;
 
 void setup() {
   size(1000, 700);
-  Ecosystem ecosystem = new Ecosystem();
-  ecosystem.drawChart(this);
+  Ecosystem ecosystem = new Ecosystem(this);
 }

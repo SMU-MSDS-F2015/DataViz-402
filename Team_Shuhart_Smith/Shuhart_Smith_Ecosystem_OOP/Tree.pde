@@ -17,8 +17,11 @@ class Maple extends Tree implements IHasSeeds {
   boolean doIReproduce() {return true;}
   
   MapleSeed[] produceOffspring() {
-    MapleSeed[] offspring = new MapleSeed[1];
-    offspring[0] = new MapleSeed();
+    MapleSeed[] offspring = new MapleSeed[10];
+    for(int i=0; i <10; i++) {
+      offspring[i] = new MapleSeed();
+      println("Generating Maple seed as offspring!");
+    }
     return offspring;
   }
 }

@@ -19,6 +19,8 @@ abstract class Habitat {
   
   Habitat getAdjacentHabitat() {return null;}
   
+  void Populate() {} // This will create one of each appropriate plant/animal to start with. // TODO: Male/Female one each
+
   void simulateYear(int year) {
 
     // Call on each of the inhabitants:
@@ -31,6 +33,14 @@ abstract class Habitat {
 
     for(Inhabitant inhabitant : inhabitants) {
       //if (inhabitant.doIMigrate()
+      
+      if (inhabitant instanceof ISproutable) {
+        Inhabitant seedling = ((Seed) inhabitant).transform();
+        inhabitants.add(seedling);
+        inhabitants.remove(inhabitant);
+      }
+      
+      
       if (inhabitant.doIReproduce()) {
         for(Inhabitant offspring : inhabitant.produceOffspring()) {
           inhabitants.add(offspring);
@@ -42,19 +52,7 @@ abstract class Habitat {
         inhabitant.proceedToGrave();
       }
     }
-    //boolean doIMigrate()
-    //Habitat migrate(Habitat oldHome)
-    //boolean doIReproduce()
-    //Inhabitant[] produceOffspring()
-    //boolean doIDie()
-    // proceedToGrave()
   }
-  
-   {
-    println ("Lion dying and proceeding to graveyard");
-  }
-  
-  void Populate() {} // This will create one of each appropriate plant/animal to start with. // TODO: Male/Female one each
 }
 
 class Zoo extends Habitat{

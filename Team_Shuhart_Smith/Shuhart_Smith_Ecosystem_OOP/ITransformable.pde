@@ -5,7 +5,7 @@
 
 interface ITransformable {
   boolean doITransform();
-  Inhabitant Transform();
+  Inhabitant transform();
 }
 
 interface ISproutable extends ITransformable {}

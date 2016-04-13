@@ -34,8 +34,16 @@ abstract class Habitat {
     for(Inhabitant inhabitant : inhabitants) {
       //if (inhabitant.doIMigrate()
       
+      Inhabitant seedling = null;
+      
       if (inhabitant instanceof ISproutable) {
-        Inhabitant seedling = ((Seed) inhabitant).transform();
+        if (inhabitant instanceof OakSeed) {
+          seedling = ((OakSeed)inhabitant).transform();
+        }
+        if (inhabitant instanceof MapleSeed) {
+          seedling = ((MapleSeed)inhabitant).transform();
+        }
+        println(seedling);
         inhabitants.add(seedling);
         inhabitants.remove(inhabitant);
       }

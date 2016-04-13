@@ -2,9 +2,8 @@
   Seeds are the precursors that *transform* into Plants
 */
 
-class Seed extends Plant implements ISproutable {
+class Seed extends Plant {
   boolean doITransform() {return false;}
-  Plant transform() {return new Plant();}
   
     boolean doITransform(float probability) {
     if (random(0, 100) <= probability) {
@@ -16,21 +15,21 @@ class Seed extends Plant implements ISproutable {
   }
 }
 
-class OakSeed extends Seed {
+class OakSeed extends Seed implements ISproutable {
   boolean doITransform() {
   return super.doITransform(70);
   }
 
-  Plant Transform() {return new Plant();}
+  Oak transform() {return new Oak();}
 
 }
 
-class MapleSeed extends Seed{
+class MapleSeed extends Seed implements ISproutable {
   boolean doITransform() {
     return super.doITransform(80);
   }
   
-  Plant Transform() {return new Maple();}
+  Maple transform() {return new Maple();}
 }
 
 //TBD: class BluegrassSeed extends Seed {}

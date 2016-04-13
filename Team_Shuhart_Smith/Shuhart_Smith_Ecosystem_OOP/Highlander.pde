@@ -1,0 +1,1 @@
+class Highlander extends Inhabitant {}

@@ -7,9 +7,11 @@ class Oak extends Tree  implements IHasSeeds {
   boolean doIReproduce() {return true;}
   
   OakSeed[] produceOffspring() {
-    OakSeed[] offspring = new OakSeed[1];
-    offspring[0] = new OakSeed();
-    return offspring;
+    OakSeed[] offspring = new OakSeed[2];
+    for(int i=0; i <2; i++) {
+      offspring[i] = new OakSeed();
+      println("Generating Oak seeds as offspring!");
+    }    return offspring;
   }
 
 }
@@ -17,10 +19,10 @@ class Maple extends Tree implements IHasSeeds {
   boolean doIReproduce() {return true;}
   
   MapleSeed[] produceOffspring() {
-    MapleSeed[] offspring = new MapleSeed[10];
-    for(int i=0; i <10; i++) {
+    MapleSeed[] offspring = new MapleSeed[3];
+    for(int i=0; i <3; i++) {
       offspring[i] = new MapleSeed();
-      println("Generating Maple seed as offspring!");
+      println("Generating Maple seeds as offspring!");
     }
     return offspring;
   }

@@ -11,7 +11,7 @@ boolean proceed = false;
 void drawSpheres() {
    if (proceed) { // Right now, only draw once the mouse is clicked. TODO: draw on top of the landscape/remove the background black-out
      
-    background(0);
+    //background(0);
     translate(width/2,height/2);
 //    scale(1,-1,1); // so Y is up, which makes more sense in plotting
 //    rotateY(radians(frameCount));

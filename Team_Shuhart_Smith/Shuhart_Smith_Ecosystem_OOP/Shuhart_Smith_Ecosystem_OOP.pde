@@ -8,14 +8,19 @@ PImage p;
 
 void setup() {
   //size(1000, 700);
-  Ecosystem ecosystem = new Ecosystem(this);
 
 // Below adapted from tree_landscape example:
 // The Nature of Code
 // Daniel Shiffman
 // http://natureofcode.com
 
-  size(1200, 700, P3D);
+  size(1500, 2000, P3D);
+  
+   for (int i=0; i<vecs.length; i++) {
+   vecs[i] = new PVector(random(dim),random(dim),random(dim));
+ }
+  
+  
   background(150, 150, 220);
   p = loadImage("landscape.jpg");
    
@@ -54,6 +59,11 @@ void setup() {
     tree(treeMax);
     popMatrix();
   }
+  
+  // Start the ecosystem here. TODO: adapt the ecosystem to draw()
+  
+  //Ecosystem ecosystem = new Ecosystem(this);
+
 }
 
 void tree(float treeSize) {
@@ -99,6 +109,12 @@ void branch(float len) {
       popMatrix();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
     }
   }
-  
-  
+}
+
+void draw() {
+  drawSpheres();
+}
+
+void mousePressed() {
+  proceed = true;
 }

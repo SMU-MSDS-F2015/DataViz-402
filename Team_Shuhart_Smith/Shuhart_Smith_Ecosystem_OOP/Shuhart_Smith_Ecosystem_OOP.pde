@@ -17,7 +17,7 @@ void setup() {
   size(1500, 2000, P3D);
   
    for (int i=0; i<vecs.length; i++) {
-   vecs[i] = new PVector(random(dim),random(dim),random(dim));
+   vecs[i] = new PVector(random(dim),random(1000, dim) - 1000,random(dim));
  }
   
   

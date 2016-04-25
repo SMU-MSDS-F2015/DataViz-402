@@ -12,6 +12,8 @@ class Fish extends Animal {}
 class Bass extends Fish implements ILaysEggs {
   boolean doIReproduce() {return true;}
   
+  int offspringSize = 2000; 
+  
   Bass[] produceOffspring() {
     Bass[] offspring = new Bass[1];
     offspring[0] = new Bass();
@@ -22,6 +24,8 @@ class Bass extends Fish implements ILaysEggs {
 class Cod extends Fish implements ILaysEggs {
   boolean doIReproduce() {return true;}
   
+  int offspringSize = 1000000; 
+    
   Cod[] produceOffspring() {
     Cod[] offspring = new Cod[1];
     offspring[0] = new Cod();

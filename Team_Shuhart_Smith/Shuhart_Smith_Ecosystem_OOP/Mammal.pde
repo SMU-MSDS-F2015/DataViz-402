@@ -14,7 +14,9 @@
 class Mammal extends Animal {}
 
 class Lion extends Mammal implements IMigratable, IGivesBirth, IMortal {
-
+  
+  int offspringSize = 3; 
+  
   boolean doIMigrate() {
     int success = 80;
     int chance = int(random(1, 100));
@@ -75,6 +77,9 @@ class Bat extends Mammal implements IGivesBirth {
   boolean doIReproduce() {
     return true;
   }
+  
+ int offspringSize = 1; 
+
 
   Bat[] produceOffspring() {
     Bat[] offspring = new Bat[1];
@@ -88,6 +93,8 @@ class Dog extends Mammal implements IGivesBirth {
   boolean doIReproduce() {
     return true;
   }
+  
+  int offspringSize = 5; 
 
   Dog[] produceOffspring() {
     Dog[] offspring = new Dog[1];

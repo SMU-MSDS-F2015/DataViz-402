@@ -18,6 +18,9 @@ class Insect extends Animal {}
 class Dragonfly extends Insect implements ILaysEggs  {
   boolean doIReproduce() {return true;}
   
+  int offspringSize = 100; 
+
+  
   Dragonfly[] produceOffspring() {
     Dragonfly[] offspring = new Dragonfly[1];
     offspring[0] = new Dragonfly();
@@ -28,6 +31,8 @@ class Dragonfly extends Insect implements ILaysEggs  {
 class Moth extends Insect implements ILaysEggs  {
   boolean doIReproduce() {return true;}
   
+  int offspringSize = 300; 
+
   Moth[] produceOffspring() {
     Moth[] offspring = new Moth[1];
     offspring[0] = new Moth();

@@ -19,7 +19,9 @@ class OakSeed extends Seed implements ISproutable {
   boolean doITransform() {
   return super.doITransform(70);
   }
-
+  
+  int offspringSize = 10000; 
+  
   Oak transform() {return new Oak();}
 
 }
@@ -29,6 +31,8 @@ class MapleSeed extends Seed implements ISproutable {
     return super.doITransform(80);
   }
   
+  int offspringSize = 10000; 
+
   Maple transform() {return new Maple();}
 }
 

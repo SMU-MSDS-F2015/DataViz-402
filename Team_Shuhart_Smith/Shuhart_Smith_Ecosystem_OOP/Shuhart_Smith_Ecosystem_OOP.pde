@@ -14,10 +14,10 @@ void setup() {
 // Daniel Shiffman
 // http://natureofcode.com
 
-  size(1500, 1000, P3D);
+  size(1500, 1500, P3D);
   
    for (int i=0; i<vecs.length; i++) {
-   vecs[i] = new PVector(random(dim),random(1000, dim) - 1000,random(dim));
+   vecs[i] = new PVector(random(width),random(height/2), 0);
  }
  
   
@@ -114,7 +114,11 @@ void draw() {
   endShape();
   popMatrix();
   
-  drawSpheres();
+  for(int i=0; i < 10; i++) {
+    positions[i] = int(random(0, 750));
+  }
+  
+  drawSpheres(positions);
 }
 
 void mousePressed() {

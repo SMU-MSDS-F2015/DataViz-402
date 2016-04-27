@@ -43,7 +43,6 @@ abstract class Habitat {
         if (inhabitant instanceof MapleSeed) {
           seedling = ((MapleSeed)inhabitant).transform();
         }
-        println(seedling);
         inhabitants.add(seedling);
         inhabitants.remove(inhabitant);
       }

@@ -10,7 +10,6 @@ class Oak extends Tree  implements IHasSeeds {
     OakSeed[] offspring = new OakSeed[2];
     for(int i=0; i <2; i++) {
       offspring[i] = new OakSeed();
-      println("Generating Oak seeds as offspring!");
     }    return offspring;
   }
 
@@ -22,7 +21,6 @@ class Maple extends Tree implements IHasSeeds {
     MapleSeed[] offspring = new MapleSeed[3];
     for(int i=0; i <3; i++) {
       offspring[i] = new MapleSeed();
-      println("Generating Maple seeds as offspring!");
     }
     return offspring;
   }

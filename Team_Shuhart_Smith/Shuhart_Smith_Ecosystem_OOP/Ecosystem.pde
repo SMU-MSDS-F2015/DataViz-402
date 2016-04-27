@@ -1,4 +1,3 @@
-import org.gicentre.utils.stat.*;  
 import java.util.*;
 
 /*
@@ -68,24 +67,5 @@ class Ecosystem {
     }
       
     return counts;
-  }
-  
-  void drawChart(PApplet sketchWindow) {
-    getSpeciesCounts();
-    barChart = new BarChart(sketchWindow);
-       
-    barChart.showValueAxis(true);
-    barChart.showCategoryAxis(true);
-    barChart.transposeAxes(true);
-    barChart.setBarColour(color(200,80,80,150));
-    barChart.setMinValue(0);
-    barChart.setBarGap(4);
-  
-    barChart.setData(this.getValues());
-    barChart.setBarLabels(this.getCategories());
-    barChart.draw(100, 100, 500, 500);
-    fill(120);
-    textSize(18);
-    text("Number of Inhabitants at Simulation End", 200, 70);
   }
 }

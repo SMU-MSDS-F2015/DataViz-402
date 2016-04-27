@@ -15,6 +15,9 @@ void setup() {
 // http://natureofcode.com
 
   size(1500, 1500, P3D);
+
+  ecosystem = new Ecosystem();
+
   
    for (int i=0; i<vecs.length; i++) {
    vecs[i] = new PVector(random(width),random(height/2), 0);
@@ -42,7 +45,6 @@ void setup() {
   
   // Start the ecosystem here. TODO: adapt the ecosystem to draw()
   
-  //Ecosystem ecosystem = new Ecosystem(this);
 
 }
 
@@ -117,6 +119,8 @@ void draw() {
   for(int i=0; i < 10; i++) {
     positions[i] = int(random(0, 750));
   }
+  
+  ecosystem.simulate();
   
   drawSpheres(positions);
 }

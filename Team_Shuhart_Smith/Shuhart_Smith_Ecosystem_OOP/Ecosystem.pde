@@ -5,14 +5,12 @@ import java.util.*;
    There is one ecosystem--it is globally accessible. When created, it will create and hold each of the Zoos, Parks, and Lakes, and populate each in term.
 */
 
-class Ecosystem implements IChartable {
-  final int simulationYears = 10;
+class Ecosystem {
   Habitat[] habitats;
   HashMap<String, Integer> speciesCounts = new HashMap<String, Integer>();
+  int year = 0;
   
-  Ecosystem() {}
-
-  Ecosystem(PApplet sketchWindow) {
+  Ecosystem() {
     this.habitats = new Habitat[8];
     this.habitats[0] = new Zoo("Woodland Park Zoo");
     this.habitats[1] = new Zoo("Dallas Zoo");
@@ -22,17 +20,15 @@ class Ecosystem implements IChartable {
     this.habitats[5] = new Park("Woodland Park");
     this.habitats[6] = new Lake("Lake Cliff");
     this.habitats[7] = new Lake("Green Lake");
-    simulate();
-    drawChart(sketchWindow);
+
+    //drawChart(sketchWindow);
   }
   
   void simulate() {
-    for(int year = 0; year < simulationYears; year++) {
-      //Call simulateYear on each habitat
+      year++;
       for(Habitat habitat : habitats) {
         habitat.simulateYear(year);
       }
-    }
   }
   
   void getSpeciesCounts() {

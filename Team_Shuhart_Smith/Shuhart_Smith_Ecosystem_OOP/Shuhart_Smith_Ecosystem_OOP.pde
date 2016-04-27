@@ -110,8 +110,8 @@ void branch(float len) {
 
 void draw() {
   image(background, 0, 0);
-
-  for (int i=0; i < 10; i++) {
+  
+  for (int i=0; i < positions.length; i++) {
     positions[i] = int(random(0, 750));
   }
 

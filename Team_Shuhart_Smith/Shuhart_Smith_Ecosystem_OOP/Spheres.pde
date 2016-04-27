@@ -4,6 +4,9 @@ import processing.opengl.*;
 
 PVector[] vecs = new PVector[10];
 int[] positions = new int[10];
+float[] sphereSizeLN = {7.60090246, 13.81551056, 1.098612289, 0.009950331, 1.609437912, 4.605170186, 5.703782475, 9.210340372, 9.210340372}; 
+String[] sphereNames = {"Bass","Cod","Lion","Bat","Dog","Dragonfly","Moth","Oak","Maple"};
+
 
 boolean proceed = false;
 

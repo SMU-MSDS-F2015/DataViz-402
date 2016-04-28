@@ -112,12 +112,12 @@ void draw() {
   image(background, 0, 0);
   
   for (int i=0; i < positions.length; i++) {
-    positions[i] = int(random(-200, 400));
+    positions[i] = int(random(150,700));//int(random(200, 800));
   }
 
   ecosystem.simulate();
 
-  drawSpheres(positions, sphereSizeLN, sphereColors, sphereX);
+  drawSpheres(positions, sphereSizeLN, sphereColors, sphereX, sphereY, sphereNames);
 }
 
 void mousePressed() {

@@ -58,7 +58,8 @@ void setup() {
     tree(treeMax);
     popMatrix();
   }
-  
+  textSize(50);
+  text("Offspring Size by Creation",-44, -750, 0);
   //Save rendering to buffer
   background = get(); 
 }

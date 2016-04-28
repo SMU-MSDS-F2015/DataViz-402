@@ -117,7 +117,7 @@ void draw() {
 
   ecosystem.simulate();
 
-  drawSpheres(positions, sphereSizeLN);
+  drawSpheres(positions, sphereSizeLN, sphereColors);
 }
 
 void mousePressed() {

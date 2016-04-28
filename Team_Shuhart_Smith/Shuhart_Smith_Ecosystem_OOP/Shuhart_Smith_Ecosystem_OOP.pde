@@ -21,7 +21,7 @@ void setup() {
   // Daniel Shiffman
   // http://natureofcode.com
 
-  size(1200, 900, P3D);
+  size(1500, 800, P3D);
   background(50, 150, 220);
   p = loadImage("landscape.jpg");
 
@@ -112,12 +112,12 @@ void draw() {
   image(background, 0, 0);
   
   for (int i=0; i < positions.length; i++) {
-    positions[i] = int(random(0, 750));
+    positions[i] = int(random(-200, 400));
   }
 
   ecosystem.simulate();
 
-  drawSpheres(positions, sphereSizeLN, sphereColors);
+  drawSpheres(positions, sphereSizeLN, sphereColors, sphereX);
 }
 
 void mousePressed() {

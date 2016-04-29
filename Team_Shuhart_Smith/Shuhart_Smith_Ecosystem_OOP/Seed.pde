@@ -35,6 +35,3 @@ class MapleSeed extends Seed implements ISproutable {
 
   Maple transform() {return new Maple();}
 }
-
-//TBD: class BluegrassSeed extends Seed {}
-//TBD: class CattailSeed extends Seed {}

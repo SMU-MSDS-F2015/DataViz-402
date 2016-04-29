@@ -21,16 +21,17 @@ abstract class Habitat {
   
   void Populate() {} // This will create one of each appropriate plant/animal to start with. // TODO: Male/Female one each
 
-  void simulateYear(int year) {
+  void simulateYear() {
 
-    // Call on each of the inhabitants:
-    //boolean doIMigrate()
-    //Habitat migrate(Habitat oldHome)
-    //boolean doIReproduce()
-    //Inhabitant[] produceOffspring()
-    //boolean doIDie()
-    // proceedToGrave()
-
+/*
+    Call on each of the inhabitants:
+        boolean doIMigrate()
+        Habitat migrate(Habitat oldHome)
+        boolean doIReproduce()
+        Inhabitant[] produceOffspring()
+        boolean doIDie()
+        proceedToGrave()
+*/
     for(Inhabitant inhabitant : inhabitants) {
       //if (inhabitant.doIMigrate()
       

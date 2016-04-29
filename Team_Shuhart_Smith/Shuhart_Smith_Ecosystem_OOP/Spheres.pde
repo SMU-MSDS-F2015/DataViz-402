@@ -1,5 +1,6 @@
-
 import processing.opengl.*;
+
+// Sphere will now draw the 3D sphere that represents the size of the offspring for final project
 
 class Spheres {
 
@@ -13,7 +14,6 @@ class Spheres {
   String[] sphereNames = {"Bass","Cod","Lion","Bat","Dog","Dragonfly","Moth","Oak","Maple"};
   PVector[] vecs;
   int[] positions;
-  boolean proceed;
   
   Spheres() {
   
@@ -25,33 +25,21 @@ class Spheres {
     }
   }
   
-  
   void drawSpheres() {
   
     for (int i=0; i < positions.length; i++) {
       positions[i] = int(random(150,700));//int(random(200, 800));
     }
   
-    //    rotateY(radians(frameCount));
-     
-  //    noFill();
-  //    strokeWeight(1);
-  //    box(dim);
-     
-      //translate(-dim/2,-dim/2,-dim/2);
       for (int i=0; i<vecs.length; i++) {
         vecs[i].y = positions[i];
         PVector v = vecs[i];
         noStroke();
         lights();
-        //strokeWeight(2);
-        //line(v.x,0,v.z,v.x,v.y,v.z);
         pushMatrix();
         translate(sphereX[i],v.y,0);
-        //TODO: add colors and legend by species
         fill(sphereColors[i]);
         sphere(sphereSizeLN[i]*5); //Multiplied by 10 to make it a little bigger
-        //fill(0);   
         stroke(0);
         textSize(32);
         rectMode(RADIUS);

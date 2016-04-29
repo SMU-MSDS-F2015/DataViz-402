@@ -1,15 +1,17 @@
-
 // There are oak and maple trees. They don't grow in the lakes, but are found in parks, zoos.
+
+// New for final project--draw some trees in 3D!!
+
 class Tree extends Plant {
 
   float theta, subTheta; 
   float treeMax = 250.0;
   PImage p;
   
-    // Below adapted from tree_landscape example:
-    // The Nature of Code
-    // Daniel Shiffman
-    // http://natureofcode.com
+  // Below adapted from tree_landscape example:
+  // The Nature of Code
+  // Daniel Shiffman
+  // http://natureofcode.com
   
   void draw() {
     background(50, 150, 220);
@@ -99,8 +101,6 @@ class Tree extends Plant {
       }
     }
   }
-
-
 }
 
 class Oak extends Tree  implements IHasSeeds {

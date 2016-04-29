@@ -19,14 +19,12 @@ class Ecosystem {
     this.habitats[5] = new Park("Woodland Park");
     this.habitats[6] = new Lake("Lake Cliff");
     this.habitats[7] = new Lake("Green Lake");
-
-    //drawChart(sketchWindow);
   }
   
   void simulate() {
       year++;
       for(Habitat habitat : habitats) {
-        habitat.simulateYear(year);
+        habitat.simulateYear();
       }
   }
   

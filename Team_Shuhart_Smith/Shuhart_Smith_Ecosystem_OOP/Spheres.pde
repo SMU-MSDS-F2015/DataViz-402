@@ -16,7 +16,12 @@ boolean proceed = false;
 
 
 void drawSpheres(int[] positions, float[] sphereSizeLN, color[] sphereColors, int[] sphereX, int[] sphereY, String[] sphereNames) {
-//    rotateY(radians(frameCount));
+
+  for (int i=0; i < positions.length; i++) {
+    positions[i] = int(random(150,700));//int(random(200, 800));
+  }
+
+  //    rotateY(radians(frameCount));
    
 //    noFill();
 //    strokeWeight(1);
